@@ -1,17 +1,18 @@
 import React, {Component} from 'react';
-import "./Nav.scss";
+import "./ReviewDetail.scss";
 
-class Nav extends Component {
+class ReviewDetail extends Component {
     constructor(props) {
         super(props);
     }
     
     render() {
         return (
-            <div className="Nav">
+            <div className="ReviweDetail">
+                
             </div>
         );
     }
 }
 
-export default Nav;
+export default ReviewDetail;

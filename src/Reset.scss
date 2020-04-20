@@ -4,7 +4,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     border: 0;
     font-size: 100%;
     font: inherit;
-    vertical-align: baseline; }
+    vertical-align: baseline; 
+    box-sizing: border-box;
+  }
   
   /* HTML5 display-role reset for older browsers */
   
@@ -33,3 +35,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   table {
     border-collapse: collapse;
     border-spacing: 0; }
+
+    body,html {
+      background-color: #f6f6f6;
+      width: 100%;
+    }
