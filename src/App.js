@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Footer from './Components/Footer/Footer';
+import Footer from './Components/Footer/Footer'; //테스트
+import ReviewDetail from './Pages/ReviewDetail/ReviewDetail';
 import './Components/Nav/Nav';
 import './App.scss';
 import './Reset.scss';
@@ -12,7 +13,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Footer />
       </div>
     );
   }
