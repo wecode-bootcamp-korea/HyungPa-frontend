@@ -32,6 +32,7 @@ footer {
                 border-radius: 50%;
                 opacity: .5;
                 transition: all .15s ease-in-out;
+                cursor: pointer;
                 &:hover {
                     opacity: .8;
                 }

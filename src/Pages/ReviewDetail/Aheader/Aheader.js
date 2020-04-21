@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import "./Aheader.scss";
 
 class Aheader extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className='Aheader'>

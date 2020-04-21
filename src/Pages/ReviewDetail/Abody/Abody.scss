@@ -5,6 +5,9 @@
     font-size: 16px;
     font-weight: 400;
     .aInfo {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
         .likeText {
             width: 222px;
             height: 48px;
@@ -28,10 +31,36 @@
             border: 1px solid #c8c8c8;
             border-radius: 20px;
             transition: all .15s ease-in-out;
-
+            cursor: pointer;
             &:hover {
                 color: $mainOrange;
                 border: 1px solid $mainOrange;
+            }
+        }
+
+        .info {
+            height: 52px;
+            font-size: 14px;
+            font-weight: 300;
+            transition: all .15s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .declaration {
+                margin-left: 30px;
+                span {
+                    color: #b0b0b0;
+                    margin: 0px 4px;
+                    &:hover {
+                        color:$mainOrange;
+                    }
+                }
+            }
+
+            .date {
+                span {
+                    margin: 0px 4px;
+                }
             }
         }
     }
