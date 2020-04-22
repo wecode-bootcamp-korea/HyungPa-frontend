@@ -1,0 +1,71 @@
+@import "../../../Common.scss";
+$moreReviewImgColor: #aaaaaa;
+
+.MoreReview {
+  margin: 20px 0px;
+  display: flex;
+  background-color: #ffffff;
+  cursor: pointer;
+  .moreReviewImg {
+    width: 136px;
+    height: 136px;
+    background-color: $moreReviewImgColor;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      width: 166px;
+    }
+  }
+  .moreInfo {
+    width: 704px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px;
+
+    .rate {
+      display: flex;
+      justify-content: space-between;
+      span {
+        font-size: 14px;
+        font-weight: 600;
+        color: $mainOrange;
+      }
+
+      .rateBox {
+        padding: 2px 5px;
+        width: 40px;
+        height: 18px;
+        font-size: 12px;
+        border-radius: 2px;
+        color: #ffffff;
+        background-color: $mainOrange;
+        line-height: 18px;
+        position: relative;
+        span {
+          font-size: 12px;
+          color: #ffffff;
+          position: absolute;
+          right: 5px;
+        }
+      }
+    }
+
+    .info {
+      .brand {
+        margin: 10px 0px 7px;
+      }
+    }
+
+    .iconsNDate {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: $moreReviewImgColor;
+      .icons {
+        i {
+          padding: 0px 3px 0px 6px;
+        }
+      }
+    }
+  }
+}

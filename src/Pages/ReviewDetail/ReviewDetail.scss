@@ -1,26 +1,36 @@
-.ReviewDetail {
-    width: 1000px;
-    padding-top: 86px;
-    margin: 0px auto;
-    display: flex;
-    justify-content: space-between;
+@import "../../Common.scss";
 
-    article {
-        width: 750px;
-        padding: 0px 15px;
-        margin-bottom: 32px;
-        .articleWrap {
-            background-color: #ffffff;
-            border-top: 2px solid #000000;
-            margin-bottom: 32px;
-        }
+.ReviewDetail {
+  width: 1170px;
+  padding-top: 86px;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+
+  article {
+    width: 870px;
+    padding: 0px 15px;
+    margin-bottom: 32px;
+    .articleWrap {
+      background-color: #ffffff;
+      border-top: 2px solid #000000;
+      margin-bottom: 32px;
     }
-    .rightProfile {
-        width: 280px;
-        padding: 0px 15px;
-        .profileWrap {
-            background-color: #ffffff;
-            border-top: 1px solid #e0e0e0;
-        }
+  }
+
+  .rightProfile {
+    width: 300px;
+    padding: 0px 15px;
+    .profileWrap {
+      background-color: #ffffff;
+      border-top: 1px solid #e0e0e0;
     }
+  }
+
+  .moreReviewText {
+    padding: 40px 0px 0px;
+    span {
+      color: $mainOrange;
+    }
+  }
 }

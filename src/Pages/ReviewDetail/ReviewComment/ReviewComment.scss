@@ -1,68 +1,74 @@
 @import "../../../Common.scss";
 .ReviewComment {
-    width: 720px;
-    background-color: #ffffff;
-    .commentInput {
-        padding: 28px 40px 16px;
+  background-color: #ffffff;
+  .commentInput {
+    padding: 28px 40px 16px;
 
-        .commentText {
-            font-size: 16px;
-            font-weight: 800;
-            margin-bottom: 16px;
+    .commentText {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 16px;
 
-            .countComment {
-                color: $mainOrange;
-            }
-        }
-
-        form {
-            height: 47px;
-            display: flex;
-            border: 1px solid $mainOrange;
-
-            input {
-                width: 436px;
-                border: 0px;
-                padding: 12px 20px 12px 20px;
-                &:focus {
-                    outline: none;
-                }
-            }
-
-            .inputIcons {
-                line-height: 47px;
-                font-size: 21px;
-                color: $mainOrange;
-                i {
-                    margin: 0px 5px;
-                }
-            }
-
-            button {
-                width: 100px;
-                height: 45px;
-                color: #ffffff;
-                font-weight: 400;
-                font-size: 14px;
-                background-color: $mainOrange;
-                border: 0px;
-                &:focus {
-                    outline: none;
-                }
-            }
-            
-        }
+      .countComment {
+        color: $mainOrange;
+      }
     }
-    .sort {
-        width: 96px;
-        height: 32px;
-        line-height: 32px;
-        font-size: 12px;
-        font-weight: 300;
-        padding: 0px 18px;
-        border: 1px solid #eaeaea;
+
+    form {
+      height: 47px;
+      display: flex;
+      border: 1px solid $mainOrange;
+
+      input {
+        width: 556px;
+        border: 0px;
+        padding: 12px 20px 12px 20px;
+        &:placeholder-shown {
+          font-weight: 300;
+          opacity: 0.7;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .inputIcons {
+        line-height: 47px;
+        font-size: 21px;
+        color: $mainOrange;
         i {
-            margin-left: 10px;
+          margin: 0px 5px;
         }
+      }
+
+      button {
+        width: 100px;
+        height: 45px;
+        color: #ffffff;
+        font-weight: 400;
+        font-size: 14px;
+        background-color: $mainOrange;
+        border: 0px;
+        &:focus {
+          outline: none;
+        }
+      }
     }
+  }
+  .sortContainer {
+    padding: 0px 40px;
+    .sort {
+      width: 96px;
+      height: 32px;
+      line-height: 32px;
+      font-size: 12px;
+      font-weight: 300;
+      padding: 0px 18px;
+      margin-left: auto;
+      border: 1px solid #eaeaea;
+      i {
+        margin-left: 10px;
+      }
+    }
+  }
 }
