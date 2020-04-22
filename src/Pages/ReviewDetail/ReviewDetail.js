@@ -3,13 +3,18 @@ import Aheader from "./Aheader/Aheader";
 import Abody from "./Abody/Abody";
 import ReviewComment from "./ReviewComment/ReviewComment";
 import MoreReview from "./MoreReview/MoreReview";
+import RightProfile from "./RightProfile/RightProfile";
 import "./ReviewDetail.scss";
 
 class ReviewDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      postUser: "zong",
+      postUser: {
+        name: "ㅈㅕㄴ",
+        skin: ["민감성", "21호"],
+        card: ["", "맞팔 환영해영ㅎㅎ ❤︎"],
+      },
       comment: [
         { name: "jun", text: "testestesty" },
         { name: "one", text: "안녕하세요 원철입니다." },
@@ -41,16 +46,18 @@ class ReviewDetail extends Component {
             <Aheader />
             <Abody />
           </div>
-          <ReviewComment postUser={postUser} comment={comment} />
+          <ReviewComment postUser={postUser.name} comment={comment} />
           <div className="moreReviewText">
-            <span>{postUser}</span>님의 다른 파워리뷰
+            <span>{postUser.name}</span>님의 다른 파워리뷰
           </div>
           {moreReviews.map((moreReview) => (
             <MoreReview moreReview={moreReview} />
           ))}
         </article>
         <div className="rightProfile">
-          <div className="profileWrap">test</div>
+          <div className="profileWrap">
+            <RightProfile postUser={postUser} />
+          </div>
         </div>
       </div>
     );
