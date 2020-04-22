@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Nav from "../../Components/Nav/Nav";
 import Aheader from "./Aheader/Aheader";
 import Abody from "./Abody/Abody";
 import ReviewComment from "./ReviewComment/ReviewComment";
@@ -40,26 +41,33 @@ class ReviewDetail extends Component {
   render() {
     const { postUser, comment, moreReviews } = this.state;
     return (
-      <div className="ReviewDetail">
-        <article>
-          <div className="articleWrap">
-            <Aheader />
-            <Abody />
-          </div>
-          <ReviewComment postUser={postUser.name} comment={comment} />
-          <div className="moreReviewText">
-            <span>{postUser.name}</span>님의 다른 파워리뷰
-          </div>
-          {moreReviews.map((moreReview) => (
-            <MoreReview moreReview={moreReview} />
-          ))}
-        </article>
-        <div className="rightProfile">
-          <div className="profileWrap">
-            <RightProfile postUser={postUser} />
+      <>
+        <Nav />
+        <div className="ReviewDetail">
+          <article>
+            <div className="articleWrap">
+              <Aheader />
+              <Abody />
+            </div>
+            <ReviewComment postUser={postUser.name} comment={comment} />
+            <div className="moreReviewText">
+              <span>{postUser.name}</span>님의 다른 파워리뷰
+            </div>
+            {moreReviews.length === 0 ? (
+              <div className="noOtherReview">다른 파워리뷰가 없습니다!</div>
+            ) : (
+              moreReviews.map((moreReview) => (
+                <MoreReview moreReview={moreReview} />
+              ))
+            )}
+          </article>
+          <div className="rightProfile">
+            <div className="profileWrap">
+              <RightProfile postUser={postUser} />
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }

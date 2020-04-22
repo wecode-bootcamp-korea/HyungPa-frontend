@@ -1,17 +1,14 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 import "./Nav.scss";
 
 class Nav extends Component {
-    constructor(props) {
-        super(props);
-    }
-    
-    render() {
-        return (
-            <div className="Nav">
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="Nav">
+        <div className="wrap">test</div>
+      </div>
+    );
+  }
 }
 
 export default Nav;
