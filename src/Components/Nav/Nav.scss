@@ -7,7 +7,7 @@ $iconColor: #555555;
   position: fixed;
   top: 0px;
   background-color: #ffffff;
-  z-index: 1000;
+  z-index: 100;
   .navContainer {
     width: 1140px;
     display: flex;
@@ -49,8 +49,13 @@ $iconColor: #555555;
       .navLogo {
         width: 80px;
         height: 50px;
-        background-image: url("../../Images/navLogo.png");
-        background-size: 80px 50px;
+        // background-image: url("../../Images/navLogo.png");
+        // background-size: 80px 50px;
+        font-size: 26px;
+        font-weight: 900;
+        line-height: 50px;
+        color: $mainOrange;
+        cursor: pointer;
       }
       .menu {
         width: 75px;
@@ -101,6 +106,9 @@ $iconColor: #555555;
             color: $iconColor;
           }
         }
+      }
+      .filter {
+        font-size: 20px;
       }
       i {
         cursor: pointer;
