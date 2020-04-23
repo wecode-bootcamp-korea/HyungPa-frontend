@@ -37,7 +37,9 @@ class ReviewComment extends Component {
           {comment.length === 0 ? (
             <CommentNoItem postUser={postUser} />
           ) : (
-            comment.map((commentItem) => <CommentList comment={commentItem} />)
+            comment.map((commentItem, index) => (
+              <CommentList key={index} comment={commentItem} />
+            ))
           )}
         </div>
       </div>

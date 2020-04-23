@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import "./CommentNoItem.scss";
 
 class CommentNoItem extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { postUser } = this.props;
     return (

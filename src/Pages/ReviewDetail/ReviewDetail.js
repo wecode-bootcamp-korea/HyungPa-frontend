@@ -11,6 +11,7 @@ class ReviewDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      menuNum: 2,
       postUser: {
         name: "ㅈㅕㄴ",
         skin: ["민감성", "21호"],
@@ -39,10 +40,10 @@ class ReviewDetail extends Component {
   }
 
   render() {
-    const { postUser, comment, moreReviews } = this.state;
+    const { menuNum, postUser, comment, moreReviews } = this.state;
     return (
       <>
-        <Nav />
+        <Nav picked={menuNum} />
         <div className="ReviewDetail">
           <article>
             <div className="articleWrap">
@@ -56,8 +57,8 @@ class ReviewDetail extends Component {
             {moreReviews.length === 0 ? (
               <div className="noOtherReview">다른 파워리뷰가 없습니다!</div>
             ) : (
-              moreReviews.map((moreReview) => (
-                <MoreReview moreReview={moreReview} />
+              moreReviews.map((moreReview, index) => (
+                <MoreReview key={index} moreReview={moreReview} />
               ))
             )}
           </article>

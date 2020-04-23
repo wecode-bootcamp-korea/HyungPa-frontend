@@ -49,9 +49,8 @@
         font-size: 14px;
         background-color: $mainOrange;
         border: 0px;
-        &:focus {
-          outline: none;
-        }
+        text-align: center;
+        cursor: pointer;
       }
     }
   }

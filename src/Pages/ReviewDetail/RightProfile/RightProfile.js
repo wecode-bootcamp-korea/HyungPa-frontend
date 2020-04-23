@@ -11,8 +11,8 @@ class RightProfile extends Component {
           <div className="image" />
           <div className="name">{postUser.name}</div>
           <div className="skinInfo">
-            {postUser.skin.map((skin) => (
-              <SkinInfo skin={skin} />
+            {postUser.skin.map((skin, index) => (
+              <SkinInfo key={index} skin={skin} />
             ))}
           </div>
           <div className="icons">
