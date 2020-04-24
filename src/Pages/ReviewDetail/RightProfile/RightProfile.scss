@@ -1,0 +1,72 @@
+@import "../../../Common.scss";
+.RightProfile {
+  padding-top: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  .image {
+    width: 100px;
+    height: 100px;
+    background-color: #aaaaaa;
+    border-radius: 50%;
+    margin-bottom: 16px;
+  }
+  .name {
+    font-size: 16px;
+    color: #555555;
+    margin: 6px 0px;
+  }
+  .skinInfo {
+    display: flex;
+    div {
+      margin: 6px 5px;
+    }
+  }
+  .icons {
+    margin: 10px 0px;
+    i {
+      font-size: 12px;
+      color: #aaaaaa;
+      margin: 0px 5px;
+      letter-spacing: 3px;
+    }
+  }
+  .follow {
+    width: 270px;
+    height: 40px;
+    color: #ffffff;
+    background-color: #cccccc;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 40px;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      background-color: $mainOrange;
+    }
+  }
+}
+.userIntroCard {
+  background-color: #ffffff;
+  padding: 16px;
+  margin-top: 20px;
+  width: 270px;
+  height: 148px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  .cardImage {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #aaaaaa;
+  }
+  .cardText {
+    font-size: 14px;
+    color: #555555;
+    font-weight: 300;
+  }
+}

@@ -1,0 +1,92 @@
+footer {
+  background-color: #ffffff;
+  .container {
+    color: #333333;
+    font-size: 12px;
+    width: 1140px;
+    padding: 60px 0px;
+    margin: 40px auto 0px;
+
+    div {
+      margin-top: 8px;
+    }
+
+    .title {
+      font-weight: 800;
+    }
+
+    .commerce {
+      margin-top: 10px;
+    }
+
+    .snsIconList {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+
+      .snsIcon {
+        width: 36px;
+        height: 36px;
+        color: #ffffff;
+        margin: 8px 4px;
+        border-radius: 50%;
+        opacity: 0.5;
+        transition: all 0.15s ease-in-out;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      i {
+        width: 100%;
+        font-size: 20px;
+        line-height: 36px;
+        text-align: center;
+      }
+
+      .android {
+        background-color: #a3c828;
+      }
+
+      .apple {
+        background-color: #000000;
+        margin-right: 18px;
+      }
+
+      .facebook {
+        background-color: #3b5998;
+      }
+
+      .kakao {
+        background-color: #ffc600;
+      }
+
+      .naver {
+        background-color: #25c500;
+      }
+
+      .instagram {
+        background-color: #946e53;
+      }
+    }
+
+    .noticeList {
+      margin-top: 30px;
+      font-weight: 800;
+    }
+
+    .sixBlack {
+      color: #666666;
+    }
+
+    .lightBlue {
+      color: #337ab7;
+    }
+
+    .phone {
+      font-size: 30px;
+      font-weight: 800;
+    }
+  }
+}
