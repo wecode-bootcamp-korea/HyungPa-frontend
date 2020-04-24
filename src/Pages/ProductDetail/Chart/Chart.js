@@ -56,7 +56,7 @@ class Chart extends Component {
     gradientStroke.addColorStop(0, "#FF8E19");
 
     return {
-      labels: ["", 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, ""],
+      labels: ["", 0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, ""],
       datasets: [
         {
           label: "",
@@ -76,7 +76,7 @@ class Chart extends Component {
           pointHoverBorderWidth: 2,
           pointRadius: 6,
           pointHitRadius: 1,
-          data: [0, 0, 0, 0, 3, 2, 7, 5, 4, 4, 10, 0],
+          data: [0, 1, 0, 0, 0, 6, 2, 50, 5, 3, 1, 10, 0],
         },
       ],
     };
