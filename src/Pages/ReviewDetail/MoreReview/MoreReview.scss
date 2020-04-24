@@ -5,6 +5,7 @@ $moreReviewImgColor: #aaaaaa;
   margin: 20px 0px;
   display: flex;
   background-color: #ffffff;
+  position: relative;
   cursor: pointer;
   .moreReviewImg {
     width: 136px;
@@ -16,47 +17,23 @@ $moreReviewImgColor: #aaaaaa;
     }
   }
   .moreInfo {
-    width: 704px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 12px;
 
-    .rate {
-      display: flex;
-      justify-content: space-between;
+    .info {
       span {
         font-size: 14px;
         font-weight: 600;
         color: $mainOrange;
       }
-
-      .rateBox {
-        padding: 2px 5px;
-        width: 40px;
-        height: 18px;
-        font-size: 12px;
-        border-radius: 2px;
-        color: #ffffff;
-        background-color: $mainOrange;
-        line-height: 18px;
-        position: relative;
-        span {
-          font-size: 12px;
-          color: #ffffff;
-          position: absolute;
-          right: 5px;
-        }
-      }
-    }
-
-    .info {
       .brand {
         margin: 10px 0px 7px;
       }
     }
 
-    .iconsNDate {
+    .icons {
       display: flex;
       justify-content: space-between;
       font-size: 12px;
@@ -65,6 +42,38 @@ $moreReviewImgColor: #aaaaaa;
         i {
           padding: 0px 3px 0px 6px;
         }
+      }
+    }
+  }
+  .rate {
+    height: 136px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: absolute;
+    right: 0px;
+    .date {
+      font-size: 12px;
+      color: $moreReviewImgColor;
+    }
+
+    .rateBox {
+      padding: 2px 5px;
+      width: 40px;
+      height: 18px;
+      font-size: 12px;
+      border-radius: 2px;
+      color: #ffffff;
+      background-color: $mainOrange;
+      line-height: 18px;
+      position: relative;
+      span {
+        font-size: 12px;
+        color: #ffffff;
+        position: absolute;
+        right: 5px;
       }
     }
   }

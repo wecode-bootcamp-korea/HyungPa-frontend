@@ -10,7 +10,7 @@ class Nav extends Component {
         ["홈", "/"],
         ["질문", "/"],
         ["리뷰", "/Review"],
-        ["포스트", "/"],
+        ["포스트", "/Post"],
         ["랭킹", "/Rank"],
         ["이벤트", "/"],
         ["톡", "/"],
@@ -34,14 +34,13 @@ class Nav extends Component {
               <div className="storeText">스토어 가기</div>
             </div>
             <div className="line" />
-            <div className="navLogo" />
+            <div className="navLogo">unpa.</div>
             {menuList.map((menu, index) => (
-              <div
-                key={index}
-                className={`menu ${index === picked ? "picked" : ""}`}
-              >
-                <Link to={menu[1]}>{menu[0]}</Link>
-              </div>
+              <Link key={index} to={menu[1]}>
+                <div className={`menu ${index === picked ? "picked" : ""}`}>
+                  {menu[0]}
+                </div>
+              </Link>
             ))}
           </div>
           <div className="wrapRight">
@@ -51,7 +50,7 @@ class Nav extends Component {
                 <i className="xi-search" />
               </button>
             </form>
-            <i className="xi-filter" />
+            <i className="xi-filter filter" />
             <div className="line" />
             <i className="xi-cart-o" />
             <i className="xi-pen-o" />
