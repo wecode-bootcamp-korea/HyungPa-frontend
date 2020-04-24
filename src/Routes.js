@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Login from "./Pages/Login/Login";
+import Login from './Pages/Login/Login';
+import Signin from './Pages/Signin/Signin';
 import ReviewDetail from "./Pages/ReviewDetail/ReviewDetail";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 import Footer from "./Components/Footer/Footer";
@@ -12,6 +13,7 @@ class Routes extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/login" component={Login} />
+          <Route exact path='/signin' component={Signin} />
           <Route exact path="/Review/Detail" component={ReviewDetail} />
           <Route exact path="/ProductDetail" component={ProductDetail} />
         </Switch>

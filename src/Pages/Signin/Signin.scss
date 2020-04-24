@@ -1,0 +1,60 @@
+.Signin{
+    background-color: #fff;
+}
+.containersignin{
+    border:1px solid black;
+    width: 970px;
+    height: 720px;
+    box-sizing: border-box;
+    margin:30px auto;
+}
+
+.userform{
+    border: 1px solid black;
+    width: 360px;
+    height: 680px;
+    margin:30px auto;
+}
+
+.textcenter{
+    border: 1px solid black;
+    width: 200px;
+    height: 54px;
+
+}
+
+.textimg{
+    width: 100%;
+}
+
+.emailadress-span{
+    display: flex;
+    align-items: flex-end;
+
+}
+
+
+input.underline {
+
+    border-top: none;
+    border-right:none;
+    border-bottom: 1px solid black;
+    width: 328px;
+    }
+ input::placeholder{
+     opacity: 0.5;
+ }   
+
+.login{
+    border: 1px solid black;
+    width: 328px;
+    height: 40px;
+    border-radius: 30px;
+
+}
+
+.btnunpa{
+    background-color: white;
+    width: 328px;
+    height: 40px;
+}
