@@ -61,7 +61,7 @@ class Chart extends Component {
         {
           label: "",
           fill: true,
-          lineTension: 0,
+          lineTension: 0.0,
           backgroundColor: gradientStroke,
           borderColor: "#ff5527",
           borderWidth: 1,
@@ -76,7 +76,7 @@ class Chart extends Component {
           pointHoverBorderWidth: 2,
           pointRadius: 6,
           pointHitRadius: 1,
-          data: [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 4, 0],
+          data: [0, 0, 0, 0, 3, 2, 7, 5, 4, 4, 10, 0],
         },
       ],
     };

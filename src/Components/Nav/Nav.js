@@ -36,12 +36,14 @@ class Nav extends Component {
             <div className="line" />
             <div className="navLogo">unpa.</div>
             {menuList.map((menu, index) => (
-              <div
-                key={index}
-                className={`menu ${index === picked ? "picked" : ""}`}
-              >
-                <Link to={menu[1]}>{menu[0]}</Link>
-              </div>
+              <Link to={menu[1]}>
+                <div
+                  key={index}
+                  className={`menu ${index === picked ? "picked" : ""}`}
+                >
+                  {menu[0]}
+                </div>
+              </Link>
             ))}
           </div>
           <div className="wrapRight">
