@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "./App";
 import Login from './Pages/Login/Login';
+import Signin from './Pages/Signin/Signin';
 
 class Routes extends React.Component {
     constructor(props) {
@@ -14,6 +15,7 @@ class Routes extends React.Component {
                 <Switch>
                     <Route exact path='/' component={App} />
                     <Route exact path='/login' component={Login} />
+                    <Route exact path='/signin' component={Signin} />
                 </Switch>
             </Router>
         );
