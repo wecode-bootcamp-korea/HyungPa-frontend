@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 import './Reset.scss';
+import ReviewList from './Pages/ReviewList/ReviewList';
 
 class App extends Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <ReviewList />
       </div>
     );
   }
