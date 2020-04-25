@@ -12,7 +12,7 @@ class ProductDetail extends Component {
       product: {
         brand: "자이엘",
         productName: "S.O.S 레드 칙 케어팩",
-        rate: [5, 10],
+        rateData: [0, 1, 2, 4, 7, 11, 16, 11, 7, 4, 2],
         likes: 12,
         powereRview: [],
         miniReview: [],
@@ -33,50 +33,82 @@ class ProductDetail extends Component {
           date: "2020.04.12",
         },
       ],
+      label: [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5],
     };
   }
+  componentDidMount() {
+    console.log(this.props);
+  }
+  avgStar = () => {
+    const { rateData } = this.state.product;
+    const { label } = this.state;
+    let result = 0;
+    for (let num in label) {
+      result += (label[num] * rateData[num]) / rateData.reduce((a, b) => a + b);
+    }
+    return result.toFixed(1);
+  };
   render() {
     const {
       brand,
       productName,
-      rate,
+      rateData,
       likes,
       powereRview,
       miniReview,
       count,
       price,
     } = this.state.product;
-    const { moreReviews } = this.state;
+    const { moreReviews, label } = this.state;
     return (
       <>
         <Nav />
         <div className="ProductDetail">
-          <ProductHead
-            brand={brand}
-            productName={productName}
-            rate={rate}
-            likes={likes}
-            pReview={powereRview.length}
-            mReview={miniReview.length}
-          />
-        </div>
-        <div className="chart">
-          <Chart />
-        </div>
-        <div className="priceInfo">
-          <div className="count">{count} ea</div>
-          <div className="price">
-            <span>
-              정가 <i className="xi-chart-bar" />
-            </span>
-            {price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원
+          <div className="productHead">
+            <ProductHead
+              brand={brand}
+              productName={productName}
+              rate={[this.avgStar(), rateData.reduce((a, b) => a + b)]}
+              likes={likes}
+              pReview={powereRview.length}
+              mReview={miniReview.length}
+            />
           </div>
-        </div>
-        <div className="recommand">
-          <span>추천 파워리뷰</span>
-          {moreReviews.map((moreReview, index) => (
-            <MoreReview key={index} moreReview={moreReview} />
-          ))}
+          <div className="chart">
+            <div className="title">
+              <span>{productName}</span>의 별점분포
+            </div>
+            <div className="calculate">
+              <div className="wrap">
+                <span>평균 별점</span>
+                {this.avgStar()}
+              </div>
+              <div className="wrap">
+                <span>가장 많은 별점</span>
+                {label[rateData.indexOf(Math.max(...rateData))]}
+              </div>
+              <div className="wrap">
+                <span>총 별점 수</span>
+                {rateData.reduce((a, b) => a + b)}
+              </div>
+            </div>
+            <Chart rateData={rateData} />
+          </div>
+          <div className="priceInfo">
+            <div className="count">{count} ea</div>
+            <div className="price">
+              <span>
+                정가 <i className="xi-chart-bar" />
+              </span>
+              {price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원
+            </div>
+          </div>
+          <div className="recommand">
+            <span>추천 파워리뷰</span>
+            {moreReviews.map((moreReview, index) => (
+              <MoreReview key={index} moreReview={moreReview} />
+            ))}
+          </div>
         </div>
       </>
     );

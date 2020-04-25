@@ -1,51 +1,73 @@
 .ProductDetail {
-  width: 1170px;
-  margin: 0px auto;
-  padding: 86px 15px 10px;
-}
-.chart {
-  width: 1140px;
-  margin: 0px auto;
-  background-color: #ffffff;
-}
-.priceInfo {
-  width: 1140px;
-  margin: 10px auto;
-  display: flex;
-  align-items: center;
-  background-color: #ffffff;
-  padding: 24px;
-  div {
-    width: 354px;
-    height: 60px;
-    // line-height: 60px;
+  .productHead {
+    width: 1170px;
+    margin: 0px auto;
+    padding: 86px 15px 10px;
   }
-  .count {
-    padding: 15px;
-    font-size: 24px;
-    text-align: center;
-  }
-  .price {
-    font-size: 24px;
-    padding: 10px 0px;
-    color: #888888;
-    span {
-      display: block;
-      height: 20px;
-      font-size: 12px;
-      color: #222222;
-      i {
-        color: #888888;
+  .chart {
+    width: 1140px;
+    margin: 0px auto;
+    background-color: #ffffff;
+    color: #333333;
+    .title {
+      font-size: 20px;
+      padding: 48px 24px 24px 24px;
+      span {
+        color: #1babd5;
+      }
+    }
+    .calculate {
+      display: flex;
+      font-size: 18px;
+      padding: 0px 24px 48px 24px;
+      .wrap {
+        margin-right: 20px;
+        span {
+          color: #888888;
+          margin-right: 10px;
+        }
       }
     }
   }
-}
-.recommand {
-  width: 1140px;
-  margin: 0px auto;
-  padding: 50px 0px;
-  span {
-    font-size: 21px;
-    color: #555555;
+  .priceInfo {
+    width: 1140px;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 24px;
+    div {
+      width: 354px;
+      height: 60px;
+      // line-height: 60px;
+    }
+    .count {
+      padding: 15px;
+      font-size: 24px;
+      text-align: center;
+    }
+    .price {
+      font-size: 24px;
+      padding: 10px 0px;
+      color: #888888;
+      span {
+        display: block;
+        height: 20px;
+        font-size: 12px;
+        color: #222222;
+        i {
+          color: #888888;
+        }
+      }
+    }
+  }
+  .recommand {
+    width: 1140px;
+    margin: 0px auto;
+    padding: 50px 0px;
+    span {
+      font-size: 21px;
+      color: #555555;
+    }
   }
 }
