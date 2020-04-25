@@ -1,0 +1,18 @@
+.SlideItem {
+  width: 250px;
+  height: 300px;
+  margin: 0px 7px;
+  .image {
+    width: inherit;
+    height: 250px;
+    background-image: 100% 100%;
+    background-color: #aaaaaa;
+  }
+  .info {
+    font-size: 14px;
+    .brand {
+      color: #a7a7a7;
+      margin: 5px 0px;
+    }
+  }
+}
