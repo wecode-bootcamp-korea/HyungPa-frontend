@@ -19,15 +19,19 @@ class SlideRank extends Component {
     return (
       <div className="SlideRank">
         <div className="arrow" onClick={this.scrollMinus}>
-          <i className="xi-angle-left-thin" />
+          <i className="xi-angle-left" />
         </div>
         <div className="items" ref={this.scroll}>
-          {slideItem.map((item) => (
-            <SlideItem brand={item.brand} productName={item.productName} />
+          {slideItem.map((item, index) => (
+            <SlideItem
+              key={index}
+              brand={item.brand}
+              productName={item.productName}
+            />
           ))}
         </div>
         <div className="arrow">
-          <i className="xi-angle-right-thin" onClick={this.scrollPlus} />
+          <i className="xi-angle-right" onClick={this.scrollPlus} />
         </div>
       </div>
     );

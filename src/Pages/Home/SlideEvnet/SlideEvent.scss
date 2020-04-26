@@ -1,0 +1,40 @@
+.SlideEvent {
+  background-color: #ffffff;
+  height: 360px;
+  display: flex;
+  position: relative;
+  .arrow {
+    position: absolute;
+    height: inherit;
+    padding: 0px 5px;
+    line-height: 360px;
+    text-align: center;
+  }
+  .left {
+    left: 0px;
+  }
+  .right {
+    right: 0px;
+  }
+  .count {
+    padding: 5px 10px;
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    opacity: 0.2;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 20px;
+  }
+  .events {
+    width: inherit;
+    height: inherit;
+    overflow: hidden;
+    display: flex;
+    scroll-behavior: smooth;
+    img {
+      width: 100%;
+    }
+  }
+}
