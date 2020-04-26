@@ -1,5 +1,7 @@
 import React, { Component, createRef } from "react";
 import SlideEvent from "./SlideEvnet/SlideEvent";
+import QNA from "./QNA/QNA";
+import HomeReview from "./HomeReview/HomeReview";
 import "./Home.scss";
 
 class Home extends Component {
@@ -15,13 +17,77 @@ class Home extends Component {
         "https://d33ur1yh5ph6b5.cloudfront.net/fcf12371-438b-435b-aa36-f888c85ed420-mid",
         "https://d33ur1yh5ph6b5.cloudfront.net/684d8d8b-ed1e-4d1f-b67a-8a2aae4c4072-mid",
       ],
+      reviewData: [
+        {
+          id: 1,
+          img:
+            "https://d33ur1yh5ph6b5.cloudfront.net/cbc3d8ba-ad30-4e83-832b-fc6d39eacd8b-small",
+          title: "매일 매일 손이가요~ 새우깡",
+          brand: "더 퓨티풀 팩터",
+        },
+        {
+          id: 2,
+          img:
+            "https://d33ur1yh5ph6b5.cloudfront.net/cbc3d8ba-ad30-4e83-832b-fc6d39eacd8b-small",
+          title: "매일 매일 손이가요~ 새우깡",
+          brand: "더 퓨티풀 팩터",
+        },
+        {
+          id: 3,
+          img:
+            "https://d33ur1yh5ph6b5.cloudfront.net/cbc3d8ba-ad30-4e83-832b-fc6d39eacd8b-small",
+          title: "매일 매일 손이가요~ 새우깡",
+          brand: "더 퓨티풀 팩터",
+        },
+        {
+          id: 4,
+          img:
+            "https://d33ur1yh5ph6b5.cloudfront.net/cbc3d8ba-ad30-4e83-832b-fc6d39eacd8b-small",
+          title: "매일 매일 손이가요~ 새우깡",
+          brand: "더 퓨티풀 팩터",
+        },
+        {
+          id: 5,
+          img:
+            "https://d33ur1yh5ph6b5.cloudfront.net/cbc3d8ba-ad30-4e83-832b-fc6d39eacd8b-small",
+          title: "매일 매일 손이가요~ 새우깡",
+          brand: "더 퓨티풀 팩터",
+        },
+        {
+          id: 6,
+          img:
+            "https://d33ur1yh5ph6b5.cloudfront.net/cbc3d8ba-ad30-4e83-832b-fc6d39eacd8b-small",
+          title: "매일 매일 손이가요~ 새우깡",
+          brand: "더 퓨티풀 팩터",
+        },
+      ],
     };
   }
   render() {
-    const { events } = this.state;
+    const { events, reviewData } = this.state;
     return (
       <div className="Home">
         <SlideEvent events={events} />
+        <div className="notice">
+          <div className="Leftwrap">
+            <span>공지</span>언파스토어 상품평 포인트 지급액 변경안내
+          </div>
+          <div className="Rightwrap">20.04.21</div>
+        </div>
+        <QNA />
+        <HomeReview reviewData={reviewData} />
+        <div
+          className="banner"
+          style={{
+            backgroundImage: `url("https://www.unpa.me/assets/images_v2/banner_check.png")`,
+          }}
+        />
+        <div
+          className="banner2"
+          style={{
+            backgroundImage: `url("https://d33ur1yh5ph6b5.cloudfront.net/7838873b-dfeb-4cc1-b6a1-95fea96b1f21-mid")`,
+          }}
+        />
       </div>
     );
   }

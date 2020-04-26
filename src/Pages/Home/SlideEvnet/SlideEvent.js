@@ -39,14 +39,14 @@ class SlideEvent extends Component {
         }
       );
     } else {
-      this.scroll.current.scrollLeft = 890 * (eventNum - 1);
+      this.scroll.current.scrollLeft = 890 * eventNum;
       this.setState({
         eventNum: eventNum - 1,
       });
     }
   };
   componentDidMount() {
-    setInterval(this.eventsPlus, 10000);
+    setInterval(this.eventsPlus, 5000);
   }
   render() {
     const { eventNum } = this.state;
