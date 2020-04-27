@@ -7,17 +7,26 @@ import Share from './Images/Share.png';
 import './ReviewFeed.scss';
 
 class ReviewFeed extends Component {
-    // constructor() {
-    //     super();
+    constructor() {
+        super();
 
-    //     this.state = {
+        this.state = {
+            isMouseOver : false        
+        }
+    }
 
-    //     }
-    // }
+    isMouseOver = () => {
+        this.setState({
+            isMouseOver: !this.state.isMouseOver
+        })
+    }
     render() {
         return (
             <div className='reFeedBox'>
-                <div className='feedContent'>
+                <div className='feedContent' 
+                onMouseEnter={this.isMouseOver}
+                onMouseLeave={this.isMouseOver}
+                >
                     <div className='userContain'>
                         <div className='userInfoBox'>
                             <div className='userImgBox'>
@@ -40,7 +49,7 @@ class ReviewFeed extends Component {
                     </div>
                     <div className='contentImgBox'>
                         <div className='contentImg'>
-                            <div className='contentComment'>
+                            <div className={this.state.isMouseOver ? 'contentComment contentCommentShow' : 'contentComment'}>
                                 {this.props.contentComment}
                             </div>
                         </div>
