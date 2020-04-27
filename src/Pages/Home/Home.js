@@ -86,7 +86,11 @@ class Home extends Component {
           rate: [4.0, 20],
         },
       ],
-      bottomBanner: [{ img: ["", ""], title: "" }],
+      bottomBanner: [{ img: ["https://www.unpa.me/assets/images_v2/ic_home_review_category_normal.png", "https://www.unpa.me/assets/images_v2/ic_home_review_category_pressed.png"], title: "카테고리별 리뷰" },
+      { img: ["https://www.unpa.me/assets/images_v2/ic_home_review_brands_normal.png", "https://www.unpa.me/assets/images_v2/ic_home_review_brands_pressed.png"], title: "브랜드별 리뷰" },
+      { img: ["https://www.unpa.me/assets/images_v2/ic_home_award_normal.png", "https://www.unpa.me/assets/images_v2/ic_home_award_pressed.png"], title: "뷰티 리뷰 위너스" },
+      { img: ["https://www.unpa.me/assets/images_v2/ic_home_mpick_normal.png", "https://www.unpa.me/assets/images_v2/ic_home_mpick_pressed.png"], title: "형님의 신상픽" }
+    ],
       isFocus: false,
     };
   }
@@ -97,7 +101,7 @@ class Home extends Component {
     this.setState({ isFocus: false });
   };
   render() {
-    const { events, reviewData, rankData } = this.state;
+    const { events, reviewData, rankData, bottomBanner } = this.state;
     return (
       <div className="Home">
         <SlideEvent events={events} />
@@ -128,7 +132,9 @@ class Home extends Component {
             <ItemRank key={index} rankData={rankData} rankNum={index} />
           ))}
         </div>
-        <BottomBanner />
+        <div className="bottomBannerWrap">
+        {bottomBanner.map((data,index)=><BottomBanner key={index} bannerData={data}/>)}
+        </div>
       </div>
     );
   }

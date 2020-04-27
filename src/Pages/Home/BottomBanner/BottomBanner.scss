@@ -3,5 +3,15 @@
   display: flex;
   justify-content: space-around;
   background-color: #ffffff;
-  padding: 20px 0px;
+  padding: 20px;
+  .icon {
+    width: 40px;
+    height: 40px;
+    background-size: 100% 100%;
+    transition: all 0.1s ease-in-out;
+  }
+  .title {
+    text-align: center;
+    line-height: 40px;
+  }
 }

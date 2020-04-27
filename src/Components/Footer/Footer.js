@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import "./Footer.scss";
 
 class Footer extends Component {
   render() {
     return (
       <footer>
-        <div className="container">
+        <div className={`container ${this.props.location.pathname === '/'?"small":""}`}>
           <div className="title">고객센터</div>
           <div className="phone">1661-5921</div>
           <div className="time sixBlack">
@@ -44,9 +45,9 @@ class Footer extends Component {
             (주)라이클 서울특별시 강남구 논현로98길 28 2층 201호
           </div>
           <div className="info sixBlack">
-            대표이사: 전지훈 |{" "}
+            대표이사: 전지훈 | 
             <span className="lightBlue">사업자번호: 217-81-39422</span> |
-            통신판매번호: 2015-서울강남-03925 | E-mail:{" "}
+            통신판매번호: 2015-서울강남-03925 | E-mail: 
             <span className="lightBlue">cs@unpa.co.kr</span>
           </div>
           <div className="info sixBlack">
@@ -58,4 +59,4 @@ class Footer extends Component {
   }
 }
 
-export default Footer;
+export default  withRouter(Footer);

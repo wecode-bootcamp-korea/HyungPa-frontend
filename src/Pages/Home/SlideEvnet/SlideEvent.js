@@ -1,6 +1,6 @@
 import React, { Component, createRef } from "react";
 import "./SlideEvent.scss";
-
+let autoSlide;
 class SlideEvent extends Component {
   constructor(props) {
     super(props);
@@ -46,7 +46,10 @@ class SlideEvent extends Component {
     }
   };
   componentDidMount() {
-    setInterval(this.eventsPlus, 5000);
+    autoSlide = setInterval(this.eventsPlus, 5000);
+  }
+  componentWillUnmount() {
+    clearInterval(autoSlide);
   }
   render() {
     const { eventNum } = this.state;
