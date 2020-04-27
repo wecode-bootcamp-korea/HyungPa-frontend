@@ -1,16 +1,221 @@
 .Unpabody{
     background-color: #fff;
+    .textcenter{
+        margin: 60px auto;
+
+        width: 200px;
+        height: 54px;
+        .textimg{
+            width: 100%;
+        }
+    }
     .containersignup{
-        border:1px solid black;
+        border:1px solid #fff;
         width: 970px;
-        height: 720px;
+        height:990px;
         box-sizing: border-box;
         margin:30px auto;
         .Unpasignup{
-            border: 1px solid black;
+            border: 1px solid #fff;
             width: 360px;
-            height: 680px;
+            height: 900px;
             margin:30px auto;
         }
     }
 }
+
+
+.underline4 {
+
+    border: 1px solid #e0e0e0;
+    width: 182px;
+    height: 30px;
+    padding: 5px 10px;
+    }
+
+.passwordipt{
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    margin-right: 50px;
+
+}
+
+
+    input.password {
+       
+        border: 1px solid white;
+        width: 200px;
+        height: 40px;
+        padding: 5px 10px;
+    }
+.emailbox{
+    display: flex;
+}
+
+.icons{
+    width:10px;
+    height:12px;
+    margin-right: 5px;
+}
+
+.handphontextbox{
+    display:flex;
+    justify-content:space-between;
+    margin-top:20px;
+  
+
+}
+
+.handphoneinput{
+    display: flex;
+}
+
+.certification{
+    border: 1px solid #e0e0e0;
+    width: 80px;
+    height: 20px;
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-left: 90px;
+    padding-left: 10px;
+}
+.handphoneinput{
+    margin-top: 10px;
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    height: 40px;
+
+}
+
+.birthflex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Referrer{
+    display: flex;
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    height: 40px;
+
+    .Referrercheck{
+    border: 1px solid #e0e0e0;
+    width: 80px;
+    height: 20px;
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-left: 90px;
+    padding-left: 20px;
+    }
+    
+
+}
+
+.Fullpromise{
+    display:flex;
+}
+.Fullcheck{
+    width: 20px;
+    height: 20px;
+}
+
+.threelogin {
+    margin-top: 20px;
+}
+
+.orline{
+    display: flex;
+}
+.linediv{
+    width: 110px;
+    height: 1px;
+    background-color: #eaeaea;
+    margin: 3px 0;
+}
+
+.Acceptdiv{
+    display: flex;
+    justify-content:start;
+    
+}
+
+
+.underline1{
+    text-decoration: underline black;
+    padding-left:111px;
+
+}
+
+.underline2{
+    text-decoration: underline black;
+    margin-left: 20px;
+}
+
+.underline3{
+    text-decoration: underline black;
+    margin-left: 53px;
+}
+
+.Subscription{
+    border: 1px solid black;
+    width: 288px;
+    height: 32px;
+    background-color: coral;
+    color: white;
+    margin-top: 15px;
+    
+}
+
+.emaillist{
+    border:1px solid #eaeaea;
+    width: 100%;
+    height: 42vpx;
+
+}
+.selectinput{
+    margin-left: 10px;
+    margin-top: 10px;
+    border-style: none;
+}
+
+.year{
+    width: 119px;
+    height: 26px;
+    border-color:#eaeaea;
+}
+.monthslc{
+    width: 119px;
+    height: 26px;
+    border-color:#eaeaea;
+    
+}
+.dayslc{
+    width: 119px;
+    height: 26px;
+    border-color:#eaeaea;
+}
+.birth{
+    margin-top: 20px;
+}
+.Referrerspan
+{
+    margin-top: 20px;
+}
+
+.Subscription{
+   width: 100%;
+}
+
+.checkbox{
+    margin-top: 40px;
+}
+
+.fullcheck{
+    margin-left: 10px;
+}
+
+.Joinbutton{
+    padding-left: 137px;
+    padding-top: 5px;
+}
+
