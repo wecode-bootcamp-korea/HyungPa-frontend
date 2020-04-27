@@ -2,14 +2,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 24px;
-    margin-bottom: 24px;
 
     .moreRevLeft {
         display: flex;
         align-items: center;
         border: 0.5px solid #f2f2f2;
         background-color: #fff;
+        cursor: pointer;
 
 
         .powerRev {
@@ -54,6 +53,7 @@
     .moreRevRight {
         display: flex;
         align-items: center;
+        cursor: pointer;
 
         .filter {
             display: flex;

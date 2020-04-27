@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReviewFeed from './ReviewFeed';
 import './ReviewList.scss';
 import AnotherRev from './AnotherRev';
+import Nav from '../../Components/Nav/Nav';
+import PlusMore from './PlusMore';
 
 class ReviewList extends Component {
     constructor() {
@@ -43,11 +45,15 @@ class ReviewList extends Component {
         console.log(this.state.userData)
         return (
             <div className='reMainContain'>
+                <Nav/>
                 <div className='anotherRevContain'>
                     <AnotherRev />
                 </div>
                 <div className='reFeedContain'>
                    {UserList}
+                </div>
+                <div className='plusMore'>
+                    <PlusMore />
                 </div>
             </div>
         );
