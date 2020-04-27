@@ -32,4 +32,12 @@
     background-position: center;
     cursor: pointer;
   }
+  .itemRank {
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    .title {
+      font-size: 16px;
+      padding: 20px 16px 13px;
+    }
+  }
 }

@@ -2,6 +2,9 @@ import React, { Component, createRef } from "react";
 import SlideEvent from "./SlideEvnet/SlideEvent";
 import QNA from "./QNA/QNA";
 import HomeReview from "./HomeReview/HomeReview";
+import HomePost from "./HomePost/HomePost";
+import ItemRank from "../Rank/ItemRank/ItemRank";
+import BottomBanner from "./BottomBanner/BottomBanner";
 import "./Home.scss";
 
 class Home extends Component {
@@ -61,10 +64,40 @@ class Home extends Component {
           brand: "더 퓨티풀 팩터",
         },
       ],
+      rankData: [
+        {
+          brand: "이니스프리",
+          productName: "노세범 미네랄 파우더",
+          rate: [4.0, 20],
+        },
+        {
+          brand: "이니스프리",
+          productName: "노세범 미네랄 파우더",
+          rate: [4.0, 20],
+        },
+        {
+          brand: "이니스프리",
+          productName: "노세범 미네랄 파우더",
+          rate: [4.0, 20],
+        },
+        {
+          brand: "이니스프리",
+          productName: "노세범 미네랄 파우더",
+          rate: [4.0, 20],
+        },
+      ],
+      bottomBanner: [{ img: ["", ""], title: "" }],
+      isFocus: false,
     };
   }
+  focus = () => {
+    this.setState({ isFocus: true });
+  };
+  focusOut = () => {
+    this.setState({ isFocus: false });
+  };
   render() {
-    const { events, reviewData } = this.state;
+    const { events, reviewData, rankData } = this.state;
     return (
       <div className="Home">
         <SlideEvent events={events} />
@@ -82,12 +115,20 @@ class Home extends Component {
             backgroundImage: `url("https://www.unpa.me/assets/images_v2/banner_check.png")`,
           }}
         />
+        <HomePost postData={reviewData} />
         <div
           className="banner2"
           style={{
             backgroundImage: `url("https://d33ur1yh5ph6b5.cloudfront.net/7838873b-dfeb-4cc1-b6a1-95fea96b1f21-mid")`,
           }}
         />
+        <div className="itemRank">
+          <div className="title"># 이달의 틴트 랭킹</div>
+          {rankData.map((rankData, index) => (
+            <ItemRank key={index} rankData={rankData} rankNum={index} />
+          ))}
+        </div>
+        <BottomBanner />
       </div>
     );
   }
