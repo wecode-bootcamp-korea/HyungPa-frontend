@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./Nav.scss";
 
 class Nav extends Component {
@@ -8,22 +8,20 @@ class Nav extends Component {
     this.state = {
       menuList: [
         ["홈", "/"],
-        ["질문", "/"],
+        ["질문", "/QnA"],
         ["리뷰", "/Review"],
         ["포스트", "/Post"],
         ["랭킹", "/Rank"],
-        ["이벤트", "/"],
-        ["톡", "/"],
+        ["이벤트", "/Event"],
+        ["톡", "/Talk"],
       ],
     };
   }
-
   navSearch = (e) => {
     e.preventDefault();
   };
 
   render() {
-    const { picked } = this.props;
     const { menuList } = this.state;
     return (
       <div className="Nav">
@@ -37,7 +35,11 @@ class Nav extends Component {
             <div className="navLogo">unpa.</div>
             {menuList.map((menu, index) => (
               <Link key={index} to={menu[1]}>
-                <div className={`menu ${index === picked ? "picked" : ""}`}>
+                <div
+                  className={`menu ${
+                    menu[1] === this.props.location.pathname ? "picked" : ""
+                  }`}
+                >
                   {menu[0]}
                 </div>
               </Link>
@@ -62,4 +64,4 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+export default withRouter(Nav);
