@@ -1,197 +1,197 @@
 .reFeedBox {
-    width: 370px;
-    height: 400px;
-    margin: 15px 15px;
-    background-color: #fff;
+  width: 370px;
+  height: 400px;
+  margin: 15px 0px;
+  background-color: #fff;
+  cursor: pointer;
 
-    .feedContent {
-        cursor: pointer;
-    }
+  .feedContent {
+    cursor: pointer;
+  }
 
-    .userContain:hover {
-        border: 0.5px solid #ff5527;
-        transition: all .4s ease-in-out;
-    }
+  .userContain:hover {
+    border: 0.5px solid #ff5527;
+    transition: all 0.4s ease-in-out;
+  }
 
-    .userContain {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 8px 12px;
-        border: 0px solid #ff5527;
-        // background-color: white;
+  .userContain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border: 0px solid #ff5527;
+    // background-color: white;
 
-        .userInfoBox {
-            display: flex;
-            align-items: center;
+    .userInfoBox {
+      display: flex;
+      align-items: center;
 
-            .userImgBox {
-                display: flex;
-                align-items: center;
-
-                .userImg {
-                    width: 45px;
-                    height: 45px;
-                    border-radius: 50%;
-                    // background-color: white;
-                }
-            }
-
-            .userInfo {
-                margin-left: 5px;
-
-                .userName {
-                    font-size: 14px;
-                    color: #333;
-                }
-
-                .userSkin {
-                    font-size: 10px;
-                    opacity: 0.5;
-                }
-            }
-        }
-
-        .feedTime {
-            font-size: 11px;
-            opacity: 0.5;
-        }
-    }
-
-    .contentImgBox {
+      .userImgBox {
         display: flex;
         align-items: center;
+
+        .userImg {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          // background-color: white;
+        }
+      }
+
+      .userInfo {
+        margin-left: 5px;
+
+        .userName {
+          font-size: 14px;
+          color: #333;
+        }
+
+        .userSkin {
+          font-size: 10px;
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .feedTime {
+      font-size: 11px;
+      opacity: 0.5;
+    }
+  }
+
+  .contentImgBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .contentImg {
+      background-image: url("./Images/Maskara.png");
+      background-size: 300px 210px;
+      width: 300px;
+      height: 210px;
+
+      .contentComment {
+        display: flex;
         justify-content: center;
-    
-        .contentImg {
-            background-image: url('./Images/Maskara.png');
-            background-size: 300px 210px;
-            width: 300px;
-            height: 210px;
-
-            .contentComment {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                opacity: 0;
-                width: 300px;
-                height: 210px;
-                transition: all .5s ease-in-out;
-
-            }
-            
-            .contentCommentShow {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: black;
-                opacity: 0.5;
-                color: #fff;
-            }
-        }
-    }
-
-    .productContain {
-        display: flex;
         align-items: center;
+        font-weight: 300;
+        opacity: 0;
+        width: 300px;
+        height: 210px;
+        transition: all 0.5s ease-in-out;
+      }
+
+      .contentCommentShow {
+        display: flex;
         justify-content: center;
-
-        .producImgBox {
-            display: flex;
-            align-items: center;
-            padding: 12px 0;
-
-            .producImg {
-                height: 45px;
-            }
-        }
-
-        .producInfo {
-            margin-left: 10px;
-
-            .producBrand {
-                font-size: 16px;
-                font-weight: 400;
-                opacity: #333;
-            }
-
-            .producName {
-                font-size: 18px;
-                font-weight: 600;
-                opacity: #333;
-                margin-top: 4px;
-            }
-        }
+        align-items: center;
+        background-color: black;
+        opacity: 0.7;
+        color: #ffffff;
+      }
     }
-    
-    .feedInfo {
+  }
+
+  .productContain {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 0px 12px;
+    .producImgBox {
+      display: flex;
+      align-items: center;
+      padding: 12px 0;
+
+      .producImg {
+        height: 45px;
+      }
+    }
+
+    .producInfo {
+      margin-left: 10px;
+
+      .producBrand {
+        font-size: 16px;
+        font-weight: 400;
+        opacity: #333;
+      }
+
+      .producName {
+        font-size: 18px;
+        font-weight: 600;
+        opacity: #333;
+        margin-top: 4px;
+      }
+    }
+  }
+
+  .feedInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 0.5px solid rgb(190, 190, 190);
+    margin-top: 18px;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 4px;
+
+    .iconBox {
+      display: flex;
+      align-items: center;
+
+      .likeImgBox {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        border-top: 0.5px solid rgb(190, 190, 190);
-        margin-top: 18px;
-        margin-left: 16px;
-        margin-right: 16px;
-        padding: 4px;
 
-            .iconBox {
-            display: flex;
-            align-items: center;
-
-            .likeImgBox {
-                display: flex;
-                align-items: center;
-
-                .likeImg {
-                    height: 18px;
-                }
-    
-                .likeCount {
-                    margin-top: 5px;
-                    font-size: 12px;
-                    opacity: 0.5;
-                }
-            }
-
-            .commentImgBox {
-                display: flex;
-                align-items: center;
-                margin: 0 15px;
-
-                .commentImg {
-                    height: 18px;
-                }
-
-                .commentCount {
-                    margin-top: 5px;
-                    font-size: 12px;
-                    opacity: 0.5;
-                }
-            }
-
-            .shareImgBox {
-                display: flex;
-                align-items: center;
-
-                .shareImg {
-                    height: 18px;
-                }
-
-                .shareCount {
-                    margin-top: 5px;
-                    font-size: 12px;
-                    opacity: 0.5;
-                }
-            }
+        .likeImg {
+          height: 18px;
         }
 
-        .viewCount {
-            display: flex;
-            align-items: center;
-            font-size: 12px;
-            opacity: 0.5;
-            height: 32px;
+        .likeCount {
+          margin-top: 5px;
+          font-size: 12px;
+          opacity: 0.5;
         }
+      }
+
+      .commentImgBox {
+        display: flex;
+        align-items: center;
+        margin: 0 15px;
+
+        .commentImg {
+          height: 18px;
+        }
+
+        .commentCount {
+          margin-top: 5px;
+          font-size: 12px;
+          opacity: 0.5;
+        }
+      }
+
+      .shareImgBox {
+        display: flex;
+        align-items: center;
+
+        .shareImg {
+          height: 18px;
+        }
+
+        .shareCount {
+          margin-top: 5px;
+          font-size: 12px;
+          opacity: 0.5;
+        }
+      }
     }
+
+    .viewCount {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      opacity: 0.5;
+      height: 32px;
+    }
+  }
 }
-   

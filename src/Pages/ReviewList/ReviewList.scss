@@ -1,17 +1,10 @@
-.reMainContain {
-    width: 100vw;
+.ReviewList {
+  width: 1140px;
+  margin: 86px auto 0px;
 
-    .anotherRevContain {
-        margin-top: 86px;
-        margin-left: 135px;
-        margin-right: 135px;
-    }
-
-    .reFeedContain {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 24px;
-        margin-left: 24px;
-    }
+  .reFeedContain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

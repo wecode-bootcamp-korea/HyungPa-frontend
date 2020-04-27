@@ -36,9 +36,6 @@ class ProductDetail extends Component {
       label: [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5],
     };
   }
-  componentDidMount() {
-    console.log(this.props);
-  }
   avgStar = () => {
     const { rateData } = this.state.product;
     const { label } = this.state;
@@ -46,7 +43,7 @@ class ProductDetail extends Component {
     for (let num in label) {
       result += (label[num] * rateData[num]) / rateData.reduce((a, b) => a + b);
     }
-    return result.toFixed(1);
+    return Number(result.toFixed(1));
   };
   render() {
     const {

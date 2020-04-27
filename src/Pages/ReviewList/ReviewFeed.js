@@ -30,7 +30,7 @@ class ReviewFeed extends Component {
                     <div className='userContain'>
                         <div className='userInfoBox'>
                             <div className='userImgBox'>
-                                <img className='userImg' src={Chuu}/>
+                                <img className='userImg' src={Chuu} alt="img"/>
                             </div>
                             <div className='userInfo'>
                                 <div className='userName'>
@@ -56,7 +56,7 @@ class ReviewFeed extends Component {
                     </div>
                     <div className='productContain'>
                         <div className='producImgBox'>
-                            <img className='producImg' src={Maskara}/>
+                            <img className='producImg' src={Maskara} alt="img"/>
                         </div>
                         <div className='producInfo'>
                             <div className='producBrand'>
@@ -71,19 +71,19 @@ class ReviewFeed extends Component {
                 <div className='feedInfo'>
                     <div className='iconBox'>
                         <div className='likeImgBox'>
-                            <img className='likeImg' src={Heart}/>
+                            <img className='likeImg' src={Heart} alt="img"/>
                             <div className='likeCount'>
                                 {this.props.likeCount}
                             </div>
                         </div>
                         <div className='commentImgBox'>
-                            <img className='commentImg' src={Comment}/>
+                            <img className='commentImg' src={Comment} alt="img"/>
                             <div className='commentCount'>
                                 {this.props.commentCount}
                             </div>
                         </div>
                         <div className='shareImgBox'>
-                            <img className='shareImg' src={Share}/>
+                            <img className='shareImg' src={Share} alt="img"/>
                             <div className='shareCount'>
                                 {this.props.shareCount}
                             </div>

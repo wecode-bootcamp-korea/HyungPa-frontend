@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom";
 import Nav from "../../Components/Nav/Nav";
 import Aheader from "./Aheader/Aheader";
 import Abody from "./Abody/Abody";
@@ -47,7 +48,7 @@ class ReviewDetail extends Component {
         <div className="ReviewDetail">
           <article>
             <div className="articleWrap">
-              <Aheader />
+              <Link to={`/ProductDetail/${this.props.match.params.reviewId}`}><Aheader /></Link>
               <Abody />
             </div>
             <ReviewComment postUser={postUser.name} comment={comment} />

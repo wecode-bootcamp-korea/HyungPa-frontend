@@ -25,8 +25,8 @@ class Routes extends React.Component {
               <>
                 <Nav />
                 <Route exact path="/" component={Home} />
-                <Route exact path="/ReviewList/ReviewList" component={ReviewList} />
-                <Route exact path="/Review/Detail" component={ReviewDetail} />
+                <Route exact path="/Review" component={ReviewList} />
+                <Route exact path="/Review/Detail/:reviewId" component={ReviewDetail} />
                 <Route
                   exact
                   path="/ProductDetail/:productId"
