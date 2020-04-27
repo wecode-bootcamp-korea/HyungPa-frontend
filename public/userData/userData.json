@@ -1,0 +1,78 @@
+{
+    "UserData" : [
+        {
+            "user" : {
+                "name" : "쿠키루이",
+                "skinType" : "건성 • 21호",
+                "feedTime" : "9분 전"
+            },
+
+            "product" : {
+                "name" : "헤라 리치 컬링 마스카라",
+                "brand" : "HERA"
+            },
+
+            "content" : {
+                "contentCommnet" : "화장품 리뷰입니다~"
+            },
+
+            "feedInfo" : {
+                "likeCount" : "3",
+                "commentCount" : "6",
+                "shareCount" : "0"
+            },
+            
+            "viewCount" : {"view" : "2 views"}
+        },
+        
+        {
+            "user" : {
+                "name" : "김아무개",
+                "skinType" : "지성 • 13호",
+                "feedTime" : "40분 전"
+            },
+
+            "product" : {
+                "name" : "헤라 리치 컬링 마스카라",
+                "brand" : "HERA"
+            },
+
+            "content" : {
+                "contentCommnet" : "화장품 리뷰입니다~"
+            },
+
+            "feedInfo" : {
+                "likeCount" : "5",
+                "commentCount" : "31",
+                "shareCount" : "3"
+            },
+            
+            "viewCount" : {"view" : "37 views"}
+        },
+
+        {
+            "user" : {
+                "name" : "뷰티뽀짝",
+                "skinType" : "건성 • 8호",
+                "feedTime" : "1시간 전"
+            },
+
+            "product" : {
+                "name" : "헤라 리치 컬링 마스카라",
+                "brand" : "HERA"
+            },
+
+            "content" : {
+                "contentCommnet" : "화장품 리뷰입니다~"
+            },
+
+            "feedInfo" : {
+                "likeCount" : "36",
+                "commentCount" : "23",
+                "shareCount" : "21"
+            },
+            
+            "viewCount" : {"view" : "134 views"}
+        }
+    ]
+}
