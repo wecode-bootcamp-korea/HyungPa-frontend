@@ -16,9 +16,6 @@ class Chart extends Component {
             bottom: 10,
           },
         },
-        tooltips: {
-          mode: "point",
-        },
         legend: {
           display: false,
         },
@@ -45,6 +42,14 @@ class Chart extends Component {
               },
             },
           ],
+        },
+        tooltips: {
+          displayColors: false,
+          callbacks: {
+            label: function (tooltipItem) {
+              return Number(tooltipItem.yLabel) + " 명";
+            },
+          },
         },
       },
     };
@@ -76,7 +81,7 @@ class Chart extends Component {
           pointHoverBorderWidth: 2,
           pointRadius: 6,
           pointHitRadius: 1,
-          data: [0, 1, 0, 0, 0, 6, 2, 50, 5, 3, 1, 10, 0],
+          data: [0, ...this.props.rateData, 0],
         },
       ],
     };
