@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import {Link} from "react-router-dom";
 import ReviewFeed from './ReviewFeed';
 import './ReviewList.scss';
 import AnotherRev from './AnotherRev';
-import Nav from '../../Components/Nav/Nav';
 import PlusMore from './PlusMore';
 
 class ReviewList extends Component {
@@ -22,15 +22,13 @@ class ReviewList extends Component {
         fetch('http://localhost:3000/userData/userData.json')
             .then((response) => response.json())
             .then((response) => {
-                console.log(
-                    'response.UserData :', response.UserData
-                );
                 this.setState({userData: response.UserData});
             })
     }
     render() {
         let UserList = this.state.userData.map((el) => {
-            return <ReviewFeed 
+            return <Link key={el.id} to={`/Review/Detail/${el.id}`}><ReviewFeed 
+            key={el.id}
             userName={el.user.name}
             userSkin={el.user.skinType} 
             feedTime={el.user.feedTime}
@@ -40,12 +38,10 @@ class ReviewList extends Component {
             likeCount={el.feedInfo.likeCount}
             commentCount={el.feedInfo.commentCount}
             shareCount={el.feedInfo.shareCount}
-            viewCount={el.viewCount.view}/>
+            viewCount={el.viewCount.view}/></Link>
         });
-        console.log(this.state.userData)
         return (
-            <div className='reMainContain'>
-                <Nav/>
+            <div className='ReviewList'>
                 <div className='anotherRevContain'>
                     <AnotherRev />
                 </div>
