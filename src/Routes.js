@@ -5,6 +5,7 @@ import Nav from "./Components/Nav/Nav";
 import ReviewDetail from "./Pages/ReviewDetail/ReviewDetail";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 import Footer from "./Components/Footer/Footer";
+import ReviewList from './Pages/ReviewList/ReviewList';
 import "./Reset.scss";
 import Signunpa from "./Pages/Signunpa/Signunpa";
 
@@ -22,6 +23,7 @@ class Routes extends React.Component {
             component={() => (
               <>
                 <Nav />
+                <Route exact path="/ReviewList/ReviewList" component={ReviewList} />
                 <Route exact path="/Review/Detail" component={ReviewDetail} />
                 <Route
                   exact
