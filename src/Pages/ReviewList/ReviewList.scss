@@ -1,0 +1,17 @@
+.reMainContain {
+    width: 100vw;
+
+    .anotherRevContain {
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+
+    .reFeedContain {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 24px;
+        margin-left: 24px;
+        padding-top: 86px;
+    }
+}
