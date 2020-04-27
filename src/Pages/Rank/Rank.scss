@@ -1,0 +1,29 @@
+.Rank {
+  width: 1140px;
+  margin: 0px auto;
+  padding-top: 86px;
+  .headerItems {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  .itemRank {
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    .title {
+      font-size: 16px;
+      padding: 20px 16px 13px;
+    }
+  }
+  .slideRank {
+    background-color: #ffffff;
+    .title {
+      font-size: 16px;
+      padding: 20px 16px 13px;
+      span {
+        font-weight: 300;
+        color: #a7a7a7;
+      }
+    }
+  }
+}

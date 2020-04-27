@@ -1,0 +1,48 @@
+@import "../../Common.scss";
+.Home {
+  width: 890px;
+  margin: 0px auto;
+  padding-top: 86px;
+  .notice {
+    font-size: 16px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    cursor: pointer;
+    margin-bottom: 30px;
+    span {
+      margin-right: 20px;
+      color: $mainOrange;
+    }
+  }
+  .banner {
+    height: 114px;
+    background-color: #ffffff;
+    margin: 24px 0px;
+    background-size: 100%;
+    background-position: center;
+    cursor: pointer;
+  }
+  .banner2 {
+    height: 164px;
+    background-color: #ffffff;
+    margin: 24px 0px;
+    background-size: 100% 100%;
+    background-position: center;
+    cursor: pointer;
+  }
+  .itemRank {
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    .title {
+      font-size: 16px;
+      padding: 20px 16px 13px;
+    }
+  }
+  .bottomBannerWrap {
+    width: 890px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
