@@ -1,3 +1,5 @@
+export const Events = "http://localhost:3000/Data/EventData.json";
+
 export const HomeData = "http://localhost:3000/Data/HomeData.json";
 
 export const ProductDetailData =
