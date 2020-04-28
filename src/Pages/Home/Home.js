@@ -1,4 +1,5 @@
 import React, { Component, createRef } from "react";
+import Modal from "../../Components/Modal/Modal";
 import SlideEvent from "./SlideEvnet/SlideEvent";
 import QNA from "./QNA/QNA";
 import HomeReview from "./HomeReview/HomeReview";
@@ -12,6 +13,7 @@ class Home extends Component {
     super(props);
     this.scroll = createRef();
     this.state = {
+      modalOn: false,
       events: [
         "https://d33ur1yh5ph6b5.cloudfront.net/abe33a8a-d9dc-4a53-ad1e-715500b9fe4e-mid",
         "https://d33ur1yh5ph6b5.cloudfront.net/61e91d4d-7fc6-4481-8fd4-456aa3696967-mid",
@@ -86,56 +88,103 @@ class Home extends Component {
           rate: [4.0, 20],
         },
       ],
-      bottomBanner: [{ img: ["https://www.unpa.me/assets/images_v2/ic_home_review_category_normal.png", "https://www.unpa.me/assets/images_v2/ic_home_review_category_pressed.png"], title: "카테고리별 리뷰" },
-      { img: ["https://www.unpa.me/assets/images_v2/ic_home_review_brands_normal.png", "https://www.unpa.me/assets/images_v2/ic_home_review_brands_pressed.png"], title: "브랜드별 리뷰" },
-      { img: ["https://www.unpa.me/assets/images_v2/ic_home_award_normal.png", "https://www.unpa.me/assets/images_v2/ic_home_award_pressed.png"], title: "뷰티 리뷰 위너스" },
-      { img: ["https://www.unpa.me/assets/images_v2/ic_home_mpick_normal.png", "https://www.unpa.me/assets/images_v2/ic_home_mpick_pressed.png"], title: "형님의 신상픽" }
-    ],
-      isFocus: false,
+      bottomBanner: [
+        {
+          img: [
+            "https://www.unpa.me/assets/images_v2/ic_home_review_category_normal.png",
+            "https://www.unpa.me/assets/images_v2/ic_home_review_category_pressed.png",
+          ],
+          title: "카테고리별 리뷰",
+        },
+        {
+          img: [
+            "https://www.unpa.me/assets/images_v2/ic_home_review_brands_normal.png",
+            "https://www.unpa.me/assets/images_v2/ic_home_review_brands_pressed.png",
+          ],
+          title: "브랜드별 리뷰",
+        },
+        {
+          img: [
+            "https://www.unpa.me/assets/images_v2/ic_home_award_normal.png",
+            "https://www.unpa.me/assets/images_v2/ic_home_award_pressed.png",
+          ],
+          title: "뷰티 리뷰 위너스",
+        },
+        {
+          img: [
+            "https://www.unpa.me/assets/images_v2/ic_home_mpick_normal.png",
+            "https://www.unpa.me/assets/images_v2/ic_home_mpick_pressed.png",
+          ],
+          title: "형님의 신상픽",
+        },
+      ],
     };
   }
-  focus = () => {
-    this.setState({ isFocus: true });
+  modalHandler = () => {
+    this.setState({ modalOn: !this.state.modalOn });
   };
-  focusOut = () => {
-    this.setState({ isFocus: false });
-  };
+
   render() {
-    const { events, reviewData, rankData, bottomBanner } = this.state;
+    const { modalOn, events, reviewData, rankData, bottomBanner } = this.state;
+
     return (
-      <div className="Home">
-        <SlideEvent events={events} />
-        <div className="notice">
-          <div className="Leftwrap">
-            <span>공지</span>언파스토어 상품평 포인트 지급액 변경안내
+      <>
+        {modalOn ? (
+          <Modal modalHandler={this.modalHandler}>
+            {events.map((eventItem) => (
+              <img
+                key={eventItem}
+                className="eventImg"
+                src={eventItem}
+                alt="eventItem"
+              />
+            ))}
+          </Modal>
+        ) : (
+          window.scrollTo(0, 0)
+        )}
+        <div
+          className="Home"
+          style={{
+            overflow: modalOn ? "hidden" : "auto",
+            height: modalOn ? "100vh" : "auto",
+          }}
+        >
+          <SlideEvent events={events} modalHandler={this.modalHandler} />
+          <div className="notice">
+            <div className="Leftwrap">
+              <span>공지</span>언파스토어 상품평 포인트 지급액 변경안내
+            </div>
+            <div className="Rightwrap">20.04.21</div>
           </div>
-          <div className="Rightwrap">20.04.21</div>
+          <QNA />
+          <HomeReview reviewData={reviewData} />
+          <div
+            className="banner"
+            style={{
+              backgroundImage: `url("https://www.unpa.me/assets/images_v2/banner_check.png")`,
+            }}
+          />
+          <HomePost postData={reviewData} />
+          <div
+            className="banner2"
+            style={{
+              backgroundImage: `url("https://d33ur1yh5ph6b5.cloudfront.net/7838873b-dfeb-4cc1-b6a1-95fea96b1f21-mid")`,
+            }}
+          />
+          <div className="itemRank">
+            <div className="title"># 이달의 틴트 랭킹</div>
+            {rankData.map((rankData, index) => (
+              <ItemRank key={index} rankData={rankData} rankNum={index} />
+            ))}
+          </div>
+          <div className="bottomBannerWrap">
+            {bottomBanner.map((data, index) => (
+              <BottomBanner key={index} bannerData={data} />
+            ))}
+          </div>
         </div>
-        <QNA />
-        <HomeReview reviewData={reviewData} />
-        <div
-          className="banner"
-          style={{
-            backgroundImage: `url("https://www.unpa.me/assets/images_v2/banner_check.png")`,
-          }}
-        />
-        <HomePost postData={reviewData} />
-        <div
-          className="banner2"
-          style={{
-            backgroundImage: `url("https://d33ur1yh5ph6b5.cloudfront.net/7838873b-dfeb-4cc1-b6a1-95fea96b1f21-mid")`,
-          }}
-        />
-        <div className="itemRank">
-          <div className="title"># 이달의 틴트 랭킹</div>
-          {rankData.map((rankData, index) => (
-            <ItemRank key={index} rankData={rankData} rankNum={index} />
-          ))}
-        </div>
-        <div className="bottomBannerWrap">
-        {bottomBanner.map((data,index)=><BottomBanner key={index} bannerData={data}/>)}
-        </div>
-      </div>
+      </>
     );
   }
 }
