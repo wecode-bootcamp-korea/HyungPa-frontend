@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Modal.scss";
+
 class Modal extends Component {
   render() {
     const { modalHandler, children } = this.props;

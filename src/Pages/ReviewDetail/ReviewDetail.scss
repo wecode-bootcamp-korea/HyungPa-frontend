@@ -6,6 +6,7 @@
   margin: 0px auto;
   display: flex;
   justify-content: space-between;
+
   article {
     width: 870px;
     padding: 0px 15px;
@@ -16,6 +17,7 @@
       margin-bottom: 32px;
     }
   }
+
   .rightProfile {
     width: 300px;
     padding: 0px 15px;
@@ -23,12 +25,14 @@
       border-top: 1px solid #e0e0e0;
     }
   }
+
   .moreReviewText {
     padding: 40px 0px 0px;
     span {
       color: $mainOrange;
     }
   }
+
   .noOtherReview {
     color: #aaaaaa;
     padding: 40px 0px;

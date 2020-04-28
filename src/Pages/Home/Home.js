@@ -1,4 +1,5 @@
 import React, { Component, createRef } from "react";
+import { HomeData } from "../../Config";
 import Modal from "../../Components/Modal/Modal";
 import SlideEvent from "./SlideEvnet/SlideEvent";
 import QNA from "./QNA/QNA";
@@ -14,6 +15,7 @@ class Home extends Component {
     this.scroll = createRef();
     this.state = {
       modalOn: false,
+      isLoading: false,
       events: [
         "https://d33ur1yh5ph6b5.cloudfront.net/abe33a8a-d9dc-4a53-ad1e-715500b9fe4e-mid",
         "https://d33ur1yh5ph6b5.cloudfront.net/61e91d4d-7fc6-4481-8fd4-456aa3696967-mid",
@@ -21,72 +23,6 @@ class Home extends Component {
         "https://d33ur1yh5ph6b5.cloudfront.net/640f1bc3-3779-4e61-a3fa-67d1fea51667-mid",
         "https://d33ur1yh5ph6b5.cloudfront.net/fcf12371-438b-435b-aa36-f888c85ed420-mid",
         "https://d33ur1yh5ph6b5.cloudfront.net/684d8d8b-ed1e-4d1f-b67a-8a2aae4c4072-mid",
-      ],
-      reviewData: [
-        {
-          id: 1,
-          img:
-            "https://d33ur1yh5ph6b5.cloudfront.net/cbc3d8ba-ad30-4e83-832b-fc6d39eacd8b-small",
-          title: "매일 매일 손이가요~ 새우깡",
-          brand: "더 퓨티풀 팩터",
-        },
-        {
-          id: 2,
-          img:
-            "https://d33ur1yh5ph6b5.cloudfront.net/cbc3d8ba-ad30-4e83-832b-fc6d39eacd8b-small",
-          title: "매일 매일 손이가요~ 새우깡",
-          brand: "더 퓨티풀 팩터",
-        },
-        {
-          id: 3,
-          img:
-            "https://d33ur1yh5ph6b5.cloudfront.net/cbc3d8ba-ad30-4e83-832b-fc6d39eacd8b-small",
-          title: "매일 매일 손이가요~ 새우깡",
-          brand: "더 퓨티풀 팩터",
-        },
-        {
-          id: 4,
-          img:
-            "https://d33ur1yh5ph6b5.cloudfront.net/cbc3d8ba-ad30-4e83-832b-fc6d39eacd8b-small",
-          title: "매일 매일 손이가요~ 새우깡",
-          brand: "더 퓨티풀 팩터",
-        },
-        {
-          id: 5,
-          img:
-            "https://d33ur1yh5ph6b5.cloudfront.net/cbc3d8ba-ad30-4e83-832b-fc6d39eacd8b-small",
-          title: "매일 매일 손이가요~ 새우깡",
-          brand: "더 퓨티풀 팩터",
-        },
-        {
-          id: 6,
-          img:
-            "https://d33ur1yh5ph6b5.cloudfront.net/cbc3d8ba-ad30-4e83-832b-fc6d39eacd8b-small",
-          title: "매일 매일 손이가요~ 새우깡",
-          brand: "더 퓨티풀 팩터",
-        },
-      ],
-      rankData: [
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
       ],
       bottomBanner: [
         {
@@ -118,14 +54,30 @@ class Home extends Component {
           title: "형님의 신상픽",
         },
       ],
+      data: {
+        reviewData: [],
+        rankData: [],
+        bottomBanner: [],
+      },
     };
   }
+
+  componentDidMount = () => {
+    fetch(HomeData)
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({ data: res });
+      })
+      .then(this.setState({ isLoading: true }));
+  };
+
   modalHandler = () => {
     this.setState({ modalOn: !this.state.modalOn });
   };
 
   render() {
-    const { modalOn, events, reviewData, rankData, bottomBanner } = this.state;
+    const { reviewData, rankData } = this.state.data;
+    const { modalOn, isLoading, events, bottomBanner } = this.state;
 
     return (
       <>
@@ -150,7 +102,9 @@ class Home extends Component {
             height: modalOn ? "100vh" : "auto",
           }}
         >
-          <SlideEvent events={events} modalHandler={this.modalHandler} />
+          {isLoading && (
+            <SlideEvent events={events} modalHandler={this.modalHandler} />
+          )}
           <div className="notice">
             <div className="Leftwrap">
               <span>공지</span>언파스토어 상품평 포인트 지급액 변경안내
@@ -158,30 +112,24 @@ class Home extends Component {
             <div className="Rightwrap">20.04.21</div>
           </div>
           <QNA />
-          <HomeReview reviewData={reviewData} />
-          <div
-            className="banner"
-            style={{
-              backgroundImage: `url("https://www.unpa.me/assets/images_v2/banner_check.png")`,
-            }}
-          />
-          <HomePost postData={reviewData} />
-          <div
-            className="banner2"
-            style={{
-              backgroundImage: `url("https://d33ur1yh5ph6b5.cloudfront.net/7838873b-dfeb-4cc1-b6a1-95fea96b1f21-mid")`,
-            }}
-          />
+          {isLoading && <HomeReview reviewData={reviewData} />}
+          <div className="banner" />
+          {isLoading && <HomePost postData={reviewData} />}
+          <div className="banner2" />
           <div className="itemRank">
             <div className="title"># 이달의 틴트 랭킹</div>
-            {rankData.map((rankData, index) => (
-              <ItemRank key={index} rankData={rankData} rankNum={index} />
-            ))}
+            {isLoading
+              ? rankData.map((rankData, index) => (
+                  <ItemRank key={index} rankData={rankData} rankNum={index} />
+                ))
+              : ""}
           </div>
           <div className="bottomBannerWrap">
-            {bottomBanner.map((data, index) => (
-              <BottomBanner key={index} bannerData={data} />
-            ))}
+            {isLoading
+              ? bottomBanner.map((data, index) => (
+                  <BottomBanner key={index} bannerData={data} />
+                ))
+              : ""}
           </div>
         </div>
       </>

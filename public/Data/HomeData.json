@@ -1,0 +1,62 @@
+{
+  "reviewData": [
+    {
+      "id": 1,
+      "img": "https://d33ur1yh5ph6b5.cloudfront.net/cbc3d8ba-ad30-4e83-832b-fc6d39eacd8b-small",
+      "title": "매일 매일 손이가요~ 새우깡",
+      "brand": "더 퓨티풀 팩터"
+    },
+    {
+      "id": 2,
+      "img": "https://d33ur1yh5ph6b5.cloudfront.net/cbc3d8ba-ad30-4e83-832b-fc6d39eacd8b-small",
+      "title": "매일 매일 손이가요~ 새우깡",
+      "brand": "더 퓨티풀 팩터"
+    },
+    {
+      "id": 3,
+      "img": "https://d33ur1yh5ph6b5.cloudfront.net/cbc3d8ba-ad30-4e83-832b-fc6d39eacd8b-small",
+      "title": "매일 매일 손이가요~ 새우깡",
+      "brand": "더 퓨티풀 팩터"
+    },
+    {
+      "id": 4,
+      "img": "https://d33ur1yh5ph6b5.cloudfront.net/cbc3d8ba-ad30-4e83-832b-fc6d39eacd8b-small",
+      "title": "매일 매일 손이가요~ 새우깡",
+      "brand": "더 퓨티풀 팩터"
+    },
+    {
+      "id": 5,
+      "img": "https://d33ur1yh5ph6b5.cloudfront.net/cbc3d8ba-ad30-4e83-832b-fc6d39eacd8b-small",
+      "title": "매일 매일 손이가요~ 새우깡",
+      "brand": "더 퓨티풀 팩터"
+    },
+    {
+      "id": 6,
+      "img": "https://d33ur1yh5ph6b5.cloudfront.net/cbc3d8ba-ad30-4e83-832b-fc6d39eacd8b-small",
+      "title": "매일 매일 손이가요~ 새우깡",
+      "brand": "더 퓨티풀 팩터"
+    }
+  ],
+  "rankData": [
+    {
+      "brand": "이니스프리",
+      "productName": "노세범 미네랄 파우더",
+      "rate": [4.0, 20]
+    },
+    {
+      "brand": "이니스프리",
+      "productName": "노세범 미네랄 파우더",
+      "rate": [4.0, 20]
+    },
+    {
+      "brand": "이니스프리",
+      "productName": "노세범 미네랄 파우더",
+      "rate": [4.0, 20]
+    },
+    {
+      "brand": "이니스프리",
+      "productName": "노세범 미네랄 파우더",
+      "rate": [4.0, 20]
+    }
+  ]
+}
