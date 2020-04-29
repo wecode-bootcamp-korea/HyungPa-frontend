@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import ReviewFeed from "./ReviewFeed";
-import "./ReviewList.scss";
-import AnotherRev from "./AnotherRev";
-import PlusMore from "./PlusMore";
+import React, { Component } from 'react';
+import {Link} from "react-router-dom";
+import './ReviewList.scss';
+import ReviewFeed from './ReviewFeed/ReviewFeed';
+import AnotherRev from './AnotherRev/AnotherRev';
+import PlusMore from './PlusMore/PlusMore';
 
 class ReviewList extends Component {
   constructor() {
@@ -31,14 +31,19 @@ class ReviewList extends Component {
         <Link key={el.id} to={`/Review/Detail/${el.id}`}>
           <ReviewFeed
             key={el.id}
+            userPicture={el.user.picture}
             userName={el.user.name}
             userSkin={el.user.skinType}
             feedTime={el.user.feedTime}
+            producImg={el.product.image}
             producBrand={el.product.brand}
             producName={el.product.name}
             contentComment={el.content.contentComment}
+            likeImg={el.feedInfo.likeImg}
             likeCount={el.feedInfo.likeCount}
+            commentImg={el.feedInfo.commentImg}
             commentCount={el.feedInfo.commentCount}
+            shareImg={el.feedInfo.shareImg}
             shareCount={el.feedInfo.shareCount}
             viewCount={el.viewCount.view}
           />

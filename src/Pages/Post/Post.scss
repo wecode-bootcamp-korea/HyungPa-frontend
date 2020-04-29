@@ -1,0 +1,16 @@
+.Post {
+    width: 1170px;
+    margin: 0 auto;
+
+    .postAllViewBox {
+        margin-top: 86px;
+        margin-bottom: 24px;
+    }
+    
+    .postFeedBox {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

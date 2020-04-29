@@ -6,6 +6,7 @@ import Nav from "./Components/Nav/Nav";
 import Home from "./Pages/Home/Home";
 import ReviewDetail from "./Pages/ReviewDetail/ReviewDetail";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
+import Post from './Pages/Post/Post';
 import Rank from "./Pages/Rank/Rank";
 import MoreRank from "./Pages/Rank/MoreRank/MoreRank";
 import Footer from "./Components/Footer/Footer";
@@ -33,6 +34,7 @@ class Routes extends React.Component {
                   path="/ProductDetail/:productId"
                   component={ProductDetail}
                 />
+                <Route exact path="/Post" component={Post} />
                 <Route exact path="/Rank" component={Rank} />
                 <Route exact path="/Rank/List" component={MoreRank} />
               </>
