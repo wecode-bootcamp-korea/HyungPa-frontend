@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import Chuu from './Images/Chuu.jpeg';
-import Maskara from './Images/Maskara.png';
-import Heart from './Images/Heart.png';
-import Comment from './Images/Comment.png';
-import Share from './Images/Share.png';
 import './ReviewFeed.scss';
 
 class ReviewFeed extends Component {
@@ -22,7 +17,7 @@ class ReviewFeed extends Component {
     }
     render() {
         return (
-            <div className='reFeedBox'>
+            <div className='ReviewFeed'>
                 <div className='feedContent' 
                 onMouseEnter={this.isMouseOver}
                 onMouseLeave={this.isMouseOver}
@@ -30,7 +25,7 @@ class ReviewFeed extends Component {
                     <div className='userContain'>
                         <div className='userInfoBox'>
                             <div className='userImgBox'>
-                                <img className='userImg' src={Chuu} alt="img"/>
+                                <img className='userImg' src={this.props.userPicture} alt="img"/>
                             </div>
                             <div className='userInfo'>
                                 <div className='userName'>
@@ -48,15 +43,14 @@ class ReviewFeed extends Component {
                         </div>
                     </div>
                     <div className='contentImgBox'>
-                        <div className='contentImg'>
-                            <div className={this.state.isMouseOver ? 'contentComment contentCommentShow' : 'contentComment'}>
-                                {this.props.contentComment}
-                            </div>
+                        <img className='contentImg' src={this.props.producImg}/>
+                        <div className={this.state.isMouseOver ? 'contentComment contentCommentShow' : 'contentComment'}>
+                            {this.props.contentComment}
                         </div>
                     </div>
                     <div className='productContain'>
                         <div className='producImgBox'>
-                            <img className='producImg' src={Maskara} alt="img"/>
+                            <img className='producImg' src={this.props.producImg} alt="img"/>
                         </div>
                         <div className='producInfo'>
                             <div className='producBrand'>
@@ -71,19 +65,19 @@ class ReviewFeed extends Component {
                 <div className='feedInfo'>
                     <div className='iconBox'>
                         <div className='likeImgBox'>
-                            <img className='likeImg' src={Heart} alt="img"/>
+                            <img className='likeImg' src={this.props.likeImg} alt="img"/>
                             <div className='likeCount'>
                                 {this.props.likeCount}
                             </div>
                         </div>
                         <div className='commentImgBox'>
-                            <img className='commentImg' src={Comment} alt="img"/>
+                            <img className='commentImg' src={this.props.commentImg} alt="img"/>
                             <div className='commentCount'>
                                 {this.props.commentCount}
                             </div>
                         </div>
                         <div className='shareImgBox'>
-                            <img className='shareImg' src={Share} alt="img"/>
+                            <img className='shareImg' src={this.props.shareImg} alt="img"/>
                             <div className='shareCount'>
                                 {this.props.shareCount}
                             </div>

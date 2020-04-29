@@ -1,0 +1,213 @@
+.PostFeed {
+    width: 370px;
+    height: 400px;
+    margin: 15px 0px;
+    background-color: #fff;
+    cursor: pointer;
+  
+    .feedContent {
+      cursor: pointer;
+    }
+  
+    .userContain:hover {
+      border: 0.5px solid #ff5527;
+      transition: all 0.4s ease-in-out;
+    }
+  
+    .userContain {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      border: 0px solid #ff5527;
+      // background-color: white;
+  
+      .userInfoBox {
+        display: flex;
+        align-items: center;
+  
+        .userImgBox {
+          display: flex;
+          align-items: center;
+  
+          .userImg {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            // background-color: white;
+          }
+        }
+  
+        .userInfo {
+          margin-left: 5px;
+  
+          .userName {
+            font-size: 14px;
+            color: #333;
+          }
+  
+          .userSkin {
+            font-size: 10px;
+            opacity: 0.5;
+          }
+        }
+      }
+  
+      .feedTime {
+        font-size: 11px;
+        opacity: 0.5;
+      }
+    }
+  
+    .contentImgBox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 90%;
+      height: 210px;
+      margin: 0 auto;
+  
+      .contentImg {
+        height: 100%;
+      }
+  
+        .contentComment {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          text-align: center;
+          font-size: 12px;
+          font-weight: 300;
+          opacity: 0;
+          width: 100%;
+          height: 100%;
+          transition: all 0.5s ease-in-out;
+          z-index: 1000;
+        }
+  
+        .contentCommentShow {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          text-align: center;
+          width: 100%;
+          height: 100%;
+          background-color: black;
+          font-size: 12px;
+          font-weight: 300;
+          opacity: 0.7;
+          color: #ffffff;
+        }
+    }
+  
+    .productContain {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      padding: 0px 12px;
+      
+      .producImgBox {
+        display: flex;
+        align-items: center;
+        padding: 12px 0;
+  
+        .producImg {
+          height: 45px;
+        }
+      }
+  
+      .producInfo {
+        padding: 0px 16px;
+  
+        .producText {
+            padding: 12px 0px;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.1em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            opacity: 0.6;
+        }
+  
+        .producTextTwo {
+            padding: 9px 0px;
+            font-size: 12px;
+            font-weight: 400;
+            opacity: 0.5;
+        }
+      }
+    }
+  
+    .feedInfo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 0.5px solid rgb(190, 190, 190);
+      margin: 18px 16px 0px 16px;
+      padding: 4px;
+  
+      .iconBox {
+        display: flex;
+        align-items: center;
+  
+        .likeImgBox {
+          display: flex;
+          align-items: center;
+  
+          .likeImg {
+            height: 18px;
+          }
+  
+          .likeCount {
+            margin-top: 5px;
+            font-size: 12px;
+            opacity: 0.5;
+          }
+        }
+  
+        .commentImgBox {
+          display: flex;
+          align-items: center;
+          margin: 0 15px;
+  
+          .commentImg {
+            height: 18px;
+          }
+  
+          .commentCount {
+            margin-top: 5px;
+            font-size: 12px;
+            opacity: 0.5;
+          }
+        }
+  
+        .shareImgBox {
+          display: flex;
+          align-items: center;
+  
+          .shareImg {
+            height: 18px;
+          }
+  
+          .shareCount {
+            margin-top: 5px;
+            font-size: 12px;
+            opacity: 0.5;
+          }
+        }
+      }
+  
+      .viewCount {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        opacity: 0.5;
+        height: 32px;
+      }
+    }
+  }
+  
