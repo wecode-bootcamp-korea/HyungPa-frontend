@@ -1,4 +1,4 @@
-.reFeedBox {
+.ReviewFeed {
   width: 370px;
   height: 400px;
   margin: 15px 0px;
@@ -63,33 +63,44 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    width: 90%;
+    height: 210px;
+    margin: 0 auto;
 
     .contentImg {
-      background-image: url("./Images/Maskara.png");
-      background-size: 300px 210px;
-      width: 300px;
-      height: 210px;
+      height: 100%;
+    }
 
       .contentComment {
         display: flex;
         justify-content: center;
         align-items: center;
+        position: absolute;
+        text-align: center;
+        font-size: 12px;
         font-weight: 300;
         opacity: 0;
-        width: 300px;
-        height: 210px;
+        width: 100%;
+        height: 100%;
         transition: all 0.5s ease-in-out;
+        z-index: 1000;
       }
 
       .contentCommentShow {
         display: flex;
         justify-content: center;
         align-items: center;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        height: 100%;
         background-color: black;
+        font-size: 12px;
+        font-weight: 300;
         opacity: 0.7;
         color: #ffffff;
       }
-    }
   }
 
   .productContain {
@@ -97,6 +108,7 @@
     align-items: center;
     justify-content: left;
     padding: 0px 12px;
+    
     .producImgBox {
       display: flex;
       align-items: center;
@@ -130,9 +142,7 @@
     align-items: center;
     justify-content: space-between;
     border-top: 0.5px solid rgb(190, 190, 190);
-    margin-top: 18px;
-    margin-left: 16px;
-    margin-right: 16px;
+    margin: 18px 16px 0px 16px;
     padding: 4px;
 
     .iconBox {
