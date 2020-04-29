@@ -16,7 +16,24 @@ class PostFeed extends Component {
             isMouseOver: !this.state.isMouseOver
         })
     }
+    
     render() {
+        const { userPicture } = this.props;
+        const { userName } = this.props;
+        const { userSkin } = this.props;
+        const { feedTime } = this.props;
+        const { producImg } = this.props;
+        const { contentComment } = this.props;
+        const { producBrand } = this.props;
+        const { producName } = this.props;
+        const { likeImg } = this.props;
+        const { likeCount } = this.props;
+        const { commentImg } = this.props;
+        const { commentCount } = this.props;
+        const { shareImg } = this.props;
+        const { shareCount } = this.props;
+        const { viewCount } = this.props;
+
         return (
             <div className='PostFeed'>
                 <div className='feedContent' 
@@ -26,36 +43,36 @@ class PostFeed extends Component {
                     <div className='userContain'>
                         <div className='userInfoBox'>
                             <div className='userImgBox'>
-                                <img className='userImg' src={this.props.userPicture} alt="img"/>
+                                <img className='userImg' src={userPicture} alt="img"/>
                             </div>
                             <div className='userInfo'>
                                 <div className='userName'>
-                                    {this.props.userName}
+                                    {userName}
                                 </div>
                                 <div className='skinType'>
                                     <span className='userSkin'>
-                                        {this.props.userSkin}
+                                        {userSkin}
                                     </span>
                                 </div>
                             </div>
                         </div>
                         <div className='feedTime'>
-                            {this.props.feedTime}
+                            {feedTime}
                         </div>
                     </div>
                     <div className='contentImgBox'>
-                        <img className='contentImg' src={this.props.producImg}/>
+                        <img className='contentImg' src={producImg} alt="contentImg"/>
                         <div className={this.state.isMouseOver ? 'contentComment contentCommentShow' : 'contentComment'}>
-                            {this.props.contentComment}
+                            {contentComment}
                         </div>
                     </div>
                     <div className='productContain'>
                         <div className='producInfo'>
                             <div className='producText'>
-                                {this.props.producBrand.slice(0, 24)}
+                                {producBrand.slice(0, 24)}
                             </div>
                             <div className='producTextTwo'>
-                                {this.props.producName}
+                                {producName}
                             </div>
                         </div>
                     </div>
@@ -63,26 +80,26 @@ class PostFeed extends Component {
                 <div className='feedInfo'>
                     <div className='iconBox'>
                         <div className='likeImgBox'>
-                            <img className='likeImg' src={this.props.likeImg} alt="img"/>
+                            <img className='likeImg' src={likeImg} alt="img"/>
                             <div className='likeCount'>
-                                {this.props.likeCount}
+                                {likeCount}
                             </div>
                         </div>
                         <div className='commentImgBox'>
-                            <img className='commentImg' src={this.props.commentImg} alt="img"/>
+                            <img className='commentImg' src={commentImg} alt="img"/>
                             <div className='commentCount'>
-                                {this.props.commentCount}
+                                {commentCount}
                             </div>
                         </div>
                         <div className='shareImgBox'>
-                            <img className='shareImg' src={this.props.shareImg} alt="img"/>
+                            <img className='shareImg' src={shareImg} alt="img"/>
                             <div className='shareCount'>
-                                {this.props.shareCount}
+                                {shareCount}
                             </div>
                         </div>
                     </div>
                     <div className='viewCount'>
-                        {this.props.viewCount}
+                        {viewCount}
                     </div>
                 </div>
             </div>
