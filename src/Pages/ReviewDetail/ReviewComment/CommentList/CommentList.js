@@ -10,7 +10,6 @@ class CommentList extends Component {
           <div className="profileImg" />
           <div className="commentInfo">
             <div className="heart">
-              10
               <i className="xi-heart" />
             </div>
             <div className="userNDate">

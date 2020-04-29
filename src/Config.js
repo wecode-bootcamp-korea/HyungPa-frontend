@@ -1,11 +1,13 @@
-export const Events = "http://localhost:3000/Data/EventData.json";
+const API = "http://localhost:3000";
 
-export const HomeData = "http://localhost:3000/Data/HomeData.json";
+export const Events = `${API}/Data/EventData.json`;
 
-export const RankData = "http://localhost:3000/Data/RankData.json";
+export const HomeData = `${API}/Data/HomeData.json`;
 
-export const ProductDetailData =
-  "http://localhost:3000/Data/ProductDetailData.json";
+export const RankData = `${API}/Data/RankData.json`;
 
-export const ReviewDetailData =
-  "http://localhost:3000/Data/ReviewDetailData.json";
+export const ProductDetailData = `${API}/Data/ProductDetailData.json`;
+
+export const ReviewDetailData = `${API}/Data/ReviewDetailData.json`;
+
+export const PostDetailData = `${API}/Data/PostDetailData.json`;

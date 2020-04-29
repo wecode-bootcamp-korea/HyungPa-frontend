@@ -9,7 +9,7 @@ import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 import Rank from "./Pages/Rank/Rank";
 import MoreRank from "./Pages/Rank/MoreRank/MoreRank";
 import Footer from "./Components/Footer/Footer";
-import ReviewList from './Pages/ReviewList/ReviewList';
+import ReviewList from "./Pages/ReviewList/ReviewList";
 import "./Reset.scss";
 
 class Routes extends React.Component {
@@ -27,11 +27,20 @@ class Routes extends React.Component {
                 <Nav />
                 <Route exact path="/" component={Home} />
                 <Route exact path="/Review" component={ReviewList} />
-                <Route exact path="/Review/Detail/:reviewId" component={ReviewDetail} />
+                <Route
+                  exact
+                  path="/Review/Detail/:reviewId"
+                  component={ReviewDetail}
+                />
                 <Route
                   exact
                   path="/ProductDetail/:productId"
                   component={ProductDetail}
+                />
+                <Route
+                  exact
+                  path="/PostDetail/:postId"
+                  component={ReviewDetail}
                 />
                 <Route exact path="/Rank" component={Rank} />
                 <Route exact path="/Rank/List" component={MoreRank} />
