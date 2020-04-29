@@ -67,6 +67,7 @@ class ReviewDetail extends Component {
             {isLoading && (
               <ReviewComment postUser={postUser.name} comment={comment} />
             )}
+
             <div className="moreReviewText">
               <span>{postUser.name}</span>
               {trueIsReview ? "님의 다른 파워리뷰" : "님의 뷰티 팁"}
