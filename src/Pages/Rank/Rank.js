@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { RankData } from "../../Config";
 import HeaderItem from "./HeaderItem/HeaderItem";
 import ItemRank from "./ItemRank/ItemRank";
 import SlideRank from "./SlideRank/SlideRank";
@@ -8,6 +9,7 @@ class Rank extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isLoading: false,
       headerItems: [
         {
           id: 1,
@@ -38,110 +40,54 @@ class Rank extends Component {
           title: "언니의 신상픽",
         },
       ],
-      rankData1: [
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-      ],
-      rankData2: [
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-      ],
-      slideItem: [
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-      ],
+      data: { rankData1: [], rankData2: [] },
     };
   }
+  async componentDidMount() {
+    const res = await fetch(RankData);
+    const json = await res.json();
+    this.setState({
+      isLoading: true,
+      data: json,
+    });
+  }
   render() {
-    const { headerItems, rankData1, rankData2, slideItem } = this.state;
+    const { isLoading, headerItems } = this.state;
+    const { rankData1, rankData2, slideItem } = this.state.data;
     return (
       <div className="Rank">
         <div className="headerItems">
-          {headerItems.map((headerItem, index) => (
-            <HeaderItem key={headerItem.id} headerItem={headerItem} index={index}/>
-          ))}
+          {isLoading
+            ? headerItems.map((headerItem, index) => (
+                <HeaderItem
+                  key={headerItem.id}
+                  headerItem={headerItem}
+                  index={index}
+                />
+              ))
+            : ""}
         </div>
         <div className="itemRank">
           <div className="title"># 이달의 틴트 랭킹</div>
-          {rankData1.map((rankData, index) => (
-            <ItemRank key={index} rankData={rankData} rankNum={index} />
-          ))}
+          {isLoading
+            ? rankData1.map((rankData, index) => (
+                <ItemRank key={index} rankData={rankData} rankNum={index} />
+              ))
+            : ""}
         </div>
         <div className="itemRank">
           <div className="title"># 이달의 이니스프리 랭킹</div>
-          {rankData2.map((rankData, index) => (
-            <ItemRank key={index} rankData={rankData} rankNum={index} />
-          ))}
+          {isLoading
+            ? rankData2.map((rankData, index) => (
+                <ItemRank key={index} rankData={rankData} rankNum={index} />
+              ))
+            : ""}
         </div>
         <div className="slideRank">
           <div className="title">
             # 형님의 신상픽 <span>6</span>
           </div>
-          <SlideRank slideItem={slideItem} />
+          {isLoading && <SlideRank slideItem={slideItem} />}
         </div>
       </div>
     );
