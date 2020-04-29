@@ -39,7 +39,7 @@ class SlideEvent extends Component {
         }
       );
     } else {
-      this.scroll.current.scrollLeft = 890 * eventNum;
+      this.scroll.current.scrollLeft -= 890;
       this.setState({
         eventNum: eventNum - 1,
       });
@@ -53,10 +53,10 @@ class SlideEvent extends Component {
   }
   render() {
     const { eventNum } = this.state;
-    const { events } = this.props;
+    const { events, modalHandler } = this.props;
     return (
       <div className="SlideEvent">
-        <div className="count">
+        <div className="count" onClick={modalHandler}>
           {eventNum} / 6 <i className="xi-plus-thin" />
         </div>
         <div className="arrow left" onClick={this.eventsMinus}>

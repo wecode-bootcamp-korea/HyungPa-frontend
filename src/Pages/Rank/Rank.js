@@ -121,8 +121,8 @@ class Rank extends Component {
     return (
       <div className="Rank">
         <div className="headerItems">
-          {headerItems.map((headerItem) => (
-            <HeaderItem key={headerItem.id} headerItem={headerItem} />
+          {headerItems.map((headerItem, index) => (
+            <HeaderItem key={headerItem.id} headerItem={headerItem} index={index}/>
           ))}
         </div>
         <div className="itemRank">

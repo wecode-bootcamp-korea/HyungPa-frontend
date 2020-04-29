@@ -1,0 +1,39 @@
+.Modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: #000000;
+  opacity: 0.85;
+  z-index: 999;
+  margin-bottom: 40px;
+}
+.ModalWrap {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 20px;
+  margin: 100px 0px;
+  background-color: #ffffff;
+  z-index: 1000;
+  .Modalcontainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0px auto;
+    .modalBtn {
+      position: absolute;
+      cursor: pointer;
+      top: -30px;
+      right: -50px;
+      color: #ffffff;
+      font-size: 24px;
+    }
+    .eventImg {
+      width: 890px;
+      height: 360px;
+      margin-bottom: 20px;
+    }
+  }
+}

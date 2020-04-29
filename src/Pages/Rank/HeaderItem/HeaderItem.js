@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./HeaderItem.scss";
 
 class HeaderItem extends Component {
@@ -17,6 +18,7 @@ class HeaderItem extends Component {
     const { image, banner, title } = this.props.headerItem;
 
     return (
+      <Link to={this.props.index === 0?"/Rank/List":"/"}>
       <div
         className="HeaderItem"
         onMouseEnter={this.isMouseOver}
@@ -35,6 +37,7 @@ class HeaderItem extends Component {
           {title}
         </div>
       </div>
+      </Link>
     );
   }
 }
