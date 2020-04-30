@@ -21,6 +21,9 @@ class PostFeed extends Component {
         const { userPicture, userName, userSkin, feedTime, producImg, contentComment,
             producBrand, producName, likeImg, likeCount, commentImg, commentCount, shareImg,
             shareCount, viewCount } = this.props;
+
+        const { isMouseOver } = this.state
+            
         
         return (
             <div className='PostFeed'>
@@ -50,7 +53,7 @@ class PostFeed extends Component {
                     </div>
                     <div className='contentImgBox'>
                         <img className='contentImg' src={producImg} alt="contentImg"/>
-                        <div className={this.state.isMouseOver ? 'contentComment contentCommentShow' : 'contentComment'}>
+                        <div className={isMouseOver ? 'contentComment contentCommentShow' : 'contentComment'}>
                             {contentComment}
                         </div>
                     </div>
