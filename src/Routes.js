@@ -11,12 +11,11 @@ import Rank from "./Pages/Rank/Rank";
 import MoreRank from "./Pages/Rank/MoreRank/MoreRank";
 import Footer from "./Components/Footer/Footer";
 import ReviewList from "./Pages/ReviewList/ReviewList";
-import "./Reset.scss";
-<<<<<<< HEAD
-import Signunpa from "./Pages/Signunpa/Signunpa";
 import Signin from "./Pages/Signin/Signin";
-=======
->>>>>>> 617201008f1e88d093e676e1c194d075d978aa35
+import "./Reset.scss";
+
+
+
 
 class Routes extends React.Component {
   render() {
