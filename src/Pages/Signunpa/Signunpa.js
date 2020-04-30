@@ -3,8 +3,50 @@ import './Signunpa.scss'
 import CustomButton from "./CustomButton";
 
 
+
 class Signunpa extends React.Component {
 
+    constructor(){
+        super();
+
+        this.state = {
+            email: "",
+            password: ""    
+        }
+    }
+
+    handleID = (event) => {
+        // console.log(event.target.value)
+        this.setState({
+            email: event.target.value
+        });
+    }
+
+    handlePW=(event) =>{
+        console.log("pwvalue : ", event.target.value)
+        this.setState({ 
+            password: event.target.value
+        });
+    }
+
+    handleLogin = () => {
+        // console.log("button clicked")
+        console.log("this.state : ", this.state)
+        fetch("http://10.58.0.129:8000/reviewdetail/sign-up", {
+            method: "POST",
+            // headers: {
+            //   "token": localStorage.setItem("wtw-token")
+            // },
+            body: JSON.stringify({
+              email: this.state.email,
+              password: this.state.password
+            })
+          })
+            .then(response => response.json());
+        //     .then(response => {
+        
+        //  }}
+        }
     render() {
         return(
             <div className ="Unpabody">
@@ -15,10 +57,10 @@ class Signunpa extends React.Component {
                         </div>
                         <div className='Simplesignup'>
                             <div className ="fieldwrap">
-                                <label>이메일</label>
+                                <label className="labeltext">이메일</label>
                                 <div className="emailbox">
                                     <div className ="emailipt">
-                                        <input type="email" className="underline4" placeholder="이메일"/>
+                                        <input onChange={this.handleID} type="email" className="underline4" placeholder="이메일"/>
                                     </div>
                                     <div className ="emaillist">
                                         <select className="selectinput">
@@ -30,13 +72,13 @@ class Signunpa extends React.Component {
                                     </div>
                                 </div>
                                 <div className="passwordipt">
-                                    <input type="password" className="password" placeholder="비밀번호(6자~12자)"/> 
+                                    <input onChange={this.handlePW} type="password" className="password" placeholder="비밀번호(6자~12자)"/> 
                                 </div>
                                 <div className="handphontextbox">
-                                    <label>핸드폰 번호</label>
+                                    <label label className="labeltext">핸드폰 번호</label>
                                     <div className="handphontext">
                                         <img class= "icons"  alt="icons" src="https://img.icons8.com/android/24/000000/high-importance.png"/>
-                                        <span>해외에 계신가요?</span>
+                                        <span className="overseastext">해외에 계신가요?</span>
                                     </div>
                                 </div>
                                 <div className="handphoneinput">
@@ -46,18 +88,26 @@ class Signunpa extends React.Component {
                                     </div>   
                                 </div>
                                 <div className="birth">
-                                   <span>생년월일(선택)</span>
+                                   <label className="labeltext">생년월일(선택)</label>
                                    <div className="birthflex">
                                         <div className="birthinput">
                                         <select className="year">
                                                 <option value="a">년도</option>
-                                                <option value="b">2017</option>
-                                                <option value="c">2016</option>
-                                                <option value="d">2015</option>
-                                                <option value="e">2014</option>
-                                                <option value="f">2013</option>
-                                                <option value="e">2012</option>
-                                                <option value="f">2011</option>
+                                                <option value="a">2007</option>
+                                                <option value="b">2006</option>
+                                                <option value="v">2005</option>
+                                                <option value="f">2004</option>
+                                                <option value="g">2003</option>
+                                                <option value="d">2002</option>
+                                                <option value="g">2001</option>
+                                                <option value="g">2000</option>
+                                                <option value="d">1999</option>
+                                                <option value="g">1998</option>
+                                                <option value="d">1997</option>
+                                                <option value="e">1996</option>
+                                                <option value="f">1995</option>
+                                                <option value="e">1994</option>
+                                                <option value="f">1993</option>
                                             </select>
                                         </div>                              
                                         <div className="month">
@@ -131,31 +181,31 @@ class Signunpa extends React.Component {
                                     </div>
                                     <div className="Fullpromise">                                 
                                         <CustomButton/>
-                                        <span className="fullcheck">14세 이상입니다.(필수)</span>
+                                        <span className="fullcheck">14세 이상입니다.<span className="necessary">(필수)</span></span>
                                     </div>
                                     <div className="Fullpromise">                                 
                                         <CustomButton/>
                                             <div className="Acceptdiv">   
-                                                <div><span className="fullcheck">이용약관 동의(필수)</span></div>
+                                                <span className="fullcheck">이용약관 동의<span className="necessary">(필수)</span></span>
                                                 <div><span className="underline1">내용보기</span></div>                                        
                                             </div>
                                     </div>
                                     <div className="Fullpromise">                                 
                                             <CustomButton/>
                                             <div className="Acceptdiv"> 
-                                            <span className="fullcheck">개인정보 수집 및 이용동의(필수)</span>
+                                            <span className="fullcheck">개인정보 수집 및 이용동의<span className="necessary">(필수)</span></span>
                                                 <div><span className="underline2">내용보기</span></div>                                        
                                             </div>
                                     </div>
                                     <div className="Fullpromise">                                 
                                         <CustomButton/>
                                         <div className="Acceptdiv"> 
-                                            <span className="fullcheck">선택적 수집 항목 동의(선택)</span>
+                                            <span className="fullcheck">선택적 수집 항목 동의<span className="necessary">(선택)</span></span>
                                             <div><span className="underline3">내용보기</span></div>                                        
                                         </div>                                       
                                     </div>
-                                    <div className="Subscription">
-                                        <button type="text" className="Joinbutton">가입완료</button>
+                                    <div className="Signup-subscription">
+                                        <button onClick={this.handleLogin} type="text" className="Joinbutton">가입완료</button>
                                     </div>
                                 </div> 
                             </div>

@@ -1,33 +1,39 @@
 .Signin{
     background-color: #fff;
     .containersignin{
-        border:1px solid black;
-        width: 970px;
+        
+        width: 1170px;
         height: 720px;
         box-sizing: border-box;
         margin:30px auto;
         .userform{
-            border: 1px solid black;
+            
             width: 360px;
             height: 680px;
             margin:30px auto;
             .textcenter{
                 
-                border: 1px solid black;
+            
                 width: 200px;
                 height: 54px;
                 .textimg{
                     width: 100%;
-                    margin-right: 30px;
+                    margin: 20px 70px;
                 }
             }
             .fieldset{
+                margin-top: 70px;
+
+
                 .emailadress {
                     .span-container{
                         display: flex;
                         align-items: flex-end;
-                        span {
-                            color: red;
+                        margin-bottom: 20px;
+                        .emailadresstext{
+                            color:black;
+                            font-size: 14px;
+                            font-weight: 600;
                         }
                     }
                 }
@@ -36,50 +42,98 @@
     }
 }
 
+.underline::placeholder {
+    font-size: 26px;
+    font-weight: 800;
+    color:#eaeaea;
+    margin-bottom: 30px;
+  }
 
+  .passwordline-span{
+        margin-bottom: 20px;
+     .title{
+        color:black;
+        font-size: 14px;
+        font-weight: 600;
+     }   
+
+  }
 input.underline {
 
     border-top: none;
     border-right:none;
     border-bottom: 1px solid black;
     width: 328px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
     }
  input::placeholder{
-     opacity: 0.5;
+     opacity: 0.8;
  }   
 
-.login{
+.Logintext{
     border: 1px solid black;
-    width: 328px;
-    height: 25px;
+    width: 320px;
+    height: 38px;
     border-radius: 30px;
     display: flex;
     justify-content: center;
-    button {
-        margin-top: 10px;
-        background-color: #fff;
-        width: 328px;
-        height: 40px;
-        cursor: pointer;
-        border: 0;
-        border-radius:80%;
-    }
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    
+
+   
 }
 
 
-
 .threelogin {
-    margin-top: 20px;
+    margin-top: 23px;
+    margin-bottom: 55px;
+    margin-left: 23px;
+
+ .threetext{
+    font-size: 14px;
+    font-weight: 400;
+
+ }  
+
 }
 
 .orline{
     display: flex;
+    width: 264px;
+    margin-left: 25px;
+
+  .ortextdiv{
+      margin-bottom: 1px;
+      padding-bottom: 3px;
+      text-align: center;
+    .ortext{
+      font-size: 12px;
+      font-weight: 600;
+      color: #959595;
+    }  
+
+  }  
+    
 }
+
 .linediv{
     width: 110px;
     height: 1px;
     background-color: #eaeaea;
     margin: 3px 0;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.linediv2{
+    width: 110px;
+    height: 1px;
+    background-color: #eaeaea;
+    margin: 3px 0;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .Acceptdiv{
@@ -89,15 +143,81 @@ input.underline {
 }
 
 
-.underline{
-   text-decoration: underline black;
-
-}
 
 .Subscription{
     border: 1px solid black;
-    width: 288px;
+    width: 350px;
     height: 32px;
     background-color: coral;
     
+}
+
+
+.kakaolog{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius:30px;
+    background-color: #fae100;
+    width: 280px;
+    height: 40px;
+    margin: 20px 0px 0px 25px;
+    font-size: 14px;
+    font-weight: 800;
+    
+
+    .kakaotextbox{
+        margin-right: 87px;
+    }
+
+
+    .kakaoimg{
+        width:17px;
+        height:17px;
+        margin-left: 20px;
+    } 
+
+}
+
+.Facebooklog{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius:30px;
+    background-color: #1976d2;
+    width: 280px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 27px;
+    font-size: 14px;
+    font-weight: 800;
+
+
+    .Faceimg{
+        width:19px;
+        height:19px;
+        margin-left: 15px;
+        
+    }
+
+    .Facetext{
+        color: white;
+        margin-right: 65px;
+
+    }
+
+}
+
+.Helpbox {
+
+    margin-top: 26px;
+    margin-right: 20px;
+
+    .Helptext {
+
+        text-decoration: underline;
+        margin-left: 110px;
+
+    }
+
 }
