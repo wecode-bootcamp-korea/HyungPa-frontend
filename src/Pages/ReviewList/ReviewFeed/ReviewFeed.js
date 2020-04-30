@@ -20,6 +20,8 @@ class ReviewFeed extends Component {
         producBrand, producName, likeImg, likeCount, commentImg, commentCount, shareImg,
         shareCount, viewCount} = this.props;
 
+        const { isMouseOver } = this.state;
+
         return (
             <div className='ReviewFeed'>
                 <div className='feedContent' 
@@ -48,7 +50,7 @@ class ReviewFeed extends Component {
                     </div>
                     <div className='contentImgBox'>
                         <img className='contentImg' src={producImg}/>
-                        <div className={this.state.isMouseOver ? 'contentComment contentCommentShow' : 'contentComment'}>
+                        <div className={isMouseOver ? 'contentComment contentCommentShow' : 'contentComment'}>
                             {contentComment}
                         </div>
                     </div>
