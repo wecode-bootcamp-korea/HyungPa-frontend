@@ -1,0 +1,17 @@
+.SlideRank {
+  height: 300px;
+  display: flex;
+  .arrow {
+    height: inherit;
+    text-align: center;
+    line-height: 300px;
+    padding: 0px 12px;
+  }
+  .items {
+    height: inherit;
+    width: 1060px;
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+  }
+}

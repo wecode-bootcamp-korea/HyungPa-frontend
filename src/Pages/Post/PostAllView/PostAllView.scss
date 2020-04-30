@@ -1,0 +1,17 @@
+.postAllviewBtn {
+    display: inline;
+    text-align: center;
+    width: 60px;
+    border: 1px solid #ff5527;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 7px 12px;
+    margin-left: 10px;
+    cursor: pointer;
+    
+    &:hover {
+        background-color: #ff5527;
+        color: #ffffff;
+    }
+}

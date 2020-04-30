@@ -1,0 +1,25 @@
+.plusMoreBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 39px;
+  margin-top: 32px;
+  margin: 0 auto;
+
+  .plusMoreBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 45px;
+    background-color: #fff;
+    color: #686868;
+    font-size: 15px;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: #d8d8d8;
+    }
+  }
+}

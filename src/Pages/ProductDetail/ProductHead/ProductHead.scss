@@ -37,6 +37,8 @@ $gray: #555555;
   }
   .icons {
     color: $gray;
+    width: 171px;
+    display: flex;
     font-size: 12px;
     margin: 24px 0px 48px;
     span {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Filter from './Images/Filter.png';
-import Button from './Images/Button.png';
+import Filter from '../../../Images/Filter.png';
+import Button from '../../../Images/Button.png';
 import './AnotherRev.scss';
 
 class AnotherRev extends Component {

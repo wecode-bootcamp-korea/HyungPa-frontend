@@ -1,0 +1,26 @@
+{
+  "product": {
+    "brand": "자이엘",
+    "productName": "S.O.S 레드 칙 케어팩",
+    "rateData": [0, 1, 2, 4, 7, 11, 16, 11, 7, 4, 2],
+    "likes": 12,
+    "powereRview": [],
+    "miniReview": [],
+    "count": 5,
+    "price": 20000
+  },
+  "moreReviews": [
+    {
+      "brand": "이니스프리",
+      "product": "비자 트러블 클렌징젤",
+      "rate": "5.0",
+      "date": "2020.04.18"
+    },
+    {
+      "brand": "페리페라",
+      "product": "맑게 물든 벨벳 치크 [10호 겉바속촉 말린진저 ]",
+      "rate": "4.5",
+      "date": "2020.04.12"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+@import "../../../Common.scss";
+.ItemRank {
+  padding: 16px;
+  border-bottom: 1px solid #f2f2f2;
+  cursor: pointer;
+  .infoBox {
+    display: flex;
+    align-items: center;
+    .image {
+      width: 60px;
+      height: 60px;
+      background-size: 60px 60px;
+      background-color: #aaaaaa;
+      margin-right: 16px;
+      .rankNum {
+        width: 18px;
+        height: 18px;
+        font-size: 12px;
+        font-weight: 900;
+        color: #ffffff;
+        text-align: center;
+        line-height: 20px;
+        background-color: #000000;
+      }
+      .disable {
+        display: none;
+      }
+    }
+    .info {
+      height: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .brand {
+        font-size: 12px;
+        color: #a6a6a6;
+      }
+      .productName {
+        font-size: 14px;
+      }
+      .rate {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        color: #a6a6a6;
+        span {
+          color: $mainOrange;
+          margin: 0px 5px;
+        }
+        .stars {
+          font-size: 12px;
+          color: $mainOrange;
+        }
+      }
+    }
+  }
+}
