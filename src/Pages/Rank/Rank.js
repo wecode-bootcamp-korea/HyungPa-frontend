@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { RankData } from "../../Config";
 import HeaderItem from "./HeaderItem/HeaderItem";
 import ItemRank from "./ItemRank/ItemRank";
 import SlideRank from "./SlideRank/SlideRank";
@@ -8,6 +10,7 @@ class Rank extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isLoading: false,
       headerItems: [
         {
           id: 1,
@@ -38,110 +41,64 @@ class Rank extends Component {
           title: "언니의 신상픽",
         },
       ],
-      rankData1: [
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-      ],
-      rankData2: [
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-      ],
-      slideItem: [
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-        {
-          brand: "이니스프리",
-          productName: "노세범 미네랄 파우더",
-          rate: [4.0, 20],
-        },
-      ],
+      data: { ProductData1: [], BrandData2: [], PickData3: [] },
     };
   }
+  async componentDidMount() {
+    const res = await fetch(RankData);
+    const json = await res.json();
+    this.setState({
+      isLoading: true,
+      data: json,
+    });
+  }
   render() {
-    const { headerItems, rankData1, rankData2, slideItem } = this.state;
+    const { isLoading, headerItems } = this.state;
+    const { ProductData1, BrandData2, PickData3 } = this.state.data;
     return (
       <div className="Rank">
         <div className="headerItems">
           {headerItems.map((headerItem, index) => (
-            <HeaderItem key={headerItem.id} headerItem={headerItem} index={index}/>
+            <HeaderItem
+              key={headerItem.id}
+              headerItem={headerItem}
+              index={index}
+            />
           ))}
         </div>
         <div className="itemRank">
-          <div className="title"># 이달의 틴트 랭킹</div>
-          {rankData1.map((rankData, index) => (
-            <ItemRank key={index} rankData={rankData} rankNum={index} />
-          ))}
+          <div className="title">
+            # 이달의 {isLoading ? ProductData1[0].category : ""} 랭킹
+          </div>
+          {isLoading
+            ? ProductData1.map((rankData, index) => (
+                <Link key={rankData.id} to={`/Product/Detail/${rankData.id}`}>
+                  <ItemRank
+                    key={rankData.id}
+                    rankData={rankData}
+                    rankNum={index}
+                  />
+                </Link>
+              ))
+            : ""}
         </div>
         <div className="itemRank">
-          <div className="title"># 이달의 이니스프리 랭킹</div>
-          {rankData2.map((rankData, index) => (
-            <ItemRank key={index} rankData={rankData} rankNum={index} />
-          ))}
+          <div className="title">
+            # 이달의 {isLoading ? BrandData2[0].brand : ""} 랭킹
+          </div>
+          {isLoading
+            ? BrandData2.map((rankData, index) => (
+                <Link key={rankData.id} to={`/Product/Detail/${rankData.id}`}>
+                  <ItemRank key={index} rankData={rankData} rankNum={index} />
+                </Link>
+              ))
+            : ""}
         </div>
         <div className="slideRank">
           <div className="title">
             # 형님의 신상픽 <span>6</span>
           </div>
-          <SlideRank slideItem={slideItem} />
+          {isLoading && <SlideRank slideItem={PickData3} />}
         </div>
       </div>
     );

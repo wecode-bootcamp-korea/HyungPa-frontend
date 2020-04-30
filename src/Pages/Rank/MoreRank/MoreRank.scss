@@ -3,29 +3,36 @@
   width: 1140px;
   padding-top: 50px;
   margin: 0px auto;
+
   .MoreRankWrap {
     background-color: #ffffff;
+
     .category {
       font-size: 12px;
       padding: 16px;
+
       span {
         transition: all 0.2s ease-in-out;
         margin-right: 20px;
         cursor: pointer;
       }
     }
+
     .picked {
       color: $mainOrange;
     }
+
     .categoryTitle {
       padding: 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       .title {
         font-size: 16px;
         font-weight: 600;
       }
+
       .sortRank {
         width: 120px;
         height: 30px;
@@ -37,6 +44,7 @@
         padding-left: 30px;
         line-height: 30px;
         position: relative;
+
         i {
           position: absolute;
           top: 7px;

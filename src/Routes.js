@@ -6,11 +6,11 @@ import Nav from "./Components/Nav/Nav";
 import Home from "./Pages/Home/Home";
 import ReviewDetail from "./Pages/ReviewDetail/ReviewDetail";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
-import Post from './Pages/Post/Post';
+import Post from "./Pages/Post/Post";
 import Rank from "./Pages/Rank/Rank";
 import MoreRank from "./Pages/Rank/MoreRank/MoreRank";
 import Footer from "./Components/Footer/Footer";
-import ReviewList from './Pages/ReviewList/ReviewList';
+import ReviewList from "./Pages/ReviewList/ReviewList";
 import "./Reset.scss";
 
 class Routes extends React.Component {
@@ -28,11 +28,20 @@ class Routes extends React.Component {
                 <Nav />
                 <Route exact path="/" component={Home} />
                 <Route exact path="/Review" component={ReviewList} />
-                <Route exact path="/Review/Detail/:reviewId" component={ReviewDetail} />
                 <Route
                   exact
-                  path="/ProductDetail/:productId"
+                  path="/Review/Detail/:reviewId"
+                  component={ReviewDetail}
+                />
+                <Route
+                  exact
+                  path="/Product/Detail/:productId"
                   component={ProductDetail}
+                />
+                <Route
+                  exact
+                  path="/Post/Detail/:postId"
+                  component={ReviewDetail}
                 />
                 <Route exact path="/Post" component={Post} />
                 <Route exact path="/Rank" component={Rank} />

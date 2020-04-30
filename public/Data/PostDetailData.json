@@ -1,0 +1,37 @@
+{
+  "postUser": {
+    "image": "http://asd.asd/asdasd",
+    "name": "UNPA_EDITORS",
+    "skin": ["민감성", "21호"]
+  },
+  "post": {
+    "title": "dlsdlswjd",
+    "description": "test",
+    "likeNum": 10,
+    "viewNum": 213,
+    "postDate": "2020.04,12"
+  },
+  "comment": [
+    { "name": "jun", "text": "testestesty" },
+    { "name": "one", "text": "안녕하세요 원철입니다." },
+    { "name": "oasdasdne", "text": "dsadasd" }
+  ],
+  "moreReviews": [
+    {
+      "image": "http://asd.asd/asdasd",
+      "title": "비자 트러블 클렌징젤",
+      "likeNum": 10,
+      "commentNum": 2,
+      "viewNum": 213,
+      "date": "2020.04.18"
+    },
+    {
+      "image": "http://asd.asd/asdasd",
+      "title": "비자 트러블 클렌징젤",
+      "likeNum": 10,
+      "commentNum": 2,
+      "viewNum": 213,
+      "date": "2020.04.18"
+    }
+  ]
+}
