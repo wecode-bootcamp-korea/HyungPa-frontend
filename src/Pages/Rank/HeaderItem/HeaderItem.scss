@@ -7,12 +7,12 @@
   .image {
     width: inherit;
     height: 220px;
-    background-size: 100% 100%;
+    background-size: 272px;
     background-position: center;
     transition: all 0.2s ease-in-out;
   }
   .over {
-    background-size: 330px 310px;
+    background-size: 400px;
     color: $mainOrange;
   }
   .banner {

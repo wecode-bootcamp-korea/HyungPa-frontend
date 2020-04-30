@@ -3,6 +3,7 @@
   width: 890px;
   margin: 0px auto;
   padding-top: 86px;
+
   .notice {
     font-size: 16px;
     padding: 20px;
@@ -16,6 +17,7 @@
       color: $mainOrange;
     }
   }
+
   .banner {
     height: 114px;
     background-color: #ffffff;
@@ -25,6 +27,7 @@
     background-position: center;
     cursor: pointer;
   }
+
   .banner2 {
     height: 164px;
     background-color: #ffffff;
@@ -34,6 +37,7 @@
     background-position: center;
     cursor: pointer;
   }
+
   .itemRank {
     background-color: #ffffff;
     margin-bottom: 20px;
@@ -42,6 +46,7 @@
       padding: 20px 16px 13px;
     }
   }
+
   .bottomBannerWrap {
     width: 890px;
     display: flex;

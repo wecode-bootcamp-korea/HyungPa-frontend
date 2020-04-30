@@ -10,6 +10,8 @@ $gray: #555555;
     width: 156px;
     height: 156px;
     border: 1px solid #f2f2f2;
+    background-size: 100% 100%;
+    background-position: center;
   }
   .brand {
     color: $gray;
@@ -31,13 +33,14 @@ $gray: #555555;
     }
     .count {
       font-size: 12px;
+
       margin-left: 5px;
       color: $gray;
     }
   }
   .icons {
     color: $gray;
-    width: 171px;
+    width: initial;
     display: flex;
     font-size: 12px;
     margin: 24px 0px 48px;

@@ -24,10 +24,6 @@ class RightProfile extends Component {
             <i className="xi-profile" /> 팔로우
           </div>
         </div>
-        <div className="userIntroCard">
-          <div className="cardImage" />
-          <div className="cardText">{postUser.card[1]}</div>
-        </div>
       </>
     );
   }

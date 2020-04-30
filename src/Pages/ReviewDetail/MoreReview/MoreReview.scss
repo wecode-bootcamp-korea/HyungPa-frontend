@@ -58,6 +58,10 @@ $moreReviewImgColor: #aaaaaa;
       font-size: 12px;
       color: $moreReviewImgColor;
     }
+    i {
+      font-size: 12px;
+      color: $mainOrange;
+    }
 
     .rateBox {
       padding: 2px 5px;
@@ -69,6 +73,9 @@ $moreReviewImgColor: #aaaaaa;
       background-color: $mainOrange;
       line-height: 18px;
       position: relative;
+      i {
+        color: #ffffff;
+      }
       span {
         font-size: 12px;
         color: #ffffff;
