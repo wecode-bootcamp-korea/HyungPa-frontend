@@ -30,7 +30,7 @@ class Routes extends React.Component {
                 <Route exact path="/Review" component={ReviewList} />
                 <Route
                   exact
-                  path="/Review/Detail/:reviewId"
+                  path="/Review/Detail/:id"
                   component={ReviewDetail}
                 />
                 <Route
@@ -38,11 +38,7 @@ class Routes extends React.Component {
                   path="/Product/Detail/:productId"
                   component={ProductDetail}
                 />
-                <Route
-                  exact
-                  path="/Post/Detail/:postId"
-                  component={ReviewDetail}
-                />
+                <Route exact path="/Post/Detail/:id" component={ReviewDetail} />
                 <Route exact path="/Post" component={Post} />
                 <Route exact path="/Rank" component={Rank} />
                 <Route exact path="/Rank/List" component={MoreRank} />
