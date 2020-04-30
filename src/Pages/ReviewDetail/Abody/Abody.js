@@ -3,16 +3,19 @@ import "./Abody.scss";
 
 class Abody extends Component {
   render() {
-    const { description, likeNum, viewNum, postDate } = this.props.post;
+    const { description, like, view, postDate } = this.props.post;
     return (
       <div className="Abody">
-        <div className="container">{description}</div>
+        <div className="container">
+          <div dangerouslySetInnerHTML={{ __html: description }} />
+          {/* <rawHtml>{description}</rawHtml> */}
+        </div>
         <div className="aInfo">
           <div className="requestLike">
             <div className="likeText">질문에 공감한다면 ♡를 눌러주세요!</div>
             <div className="giveLove">
               <i className="xi-heart" />
-              {likeNum}
+              {like}
             </div>
           </div>
           <div className="info">
@@ -22,7 +25,7 @@ class Abody extends Component {
             </div>
             <div className="date">
               <span>{postDate}</span>
-              <span>조회 {viewNum}</span>
+              <span>조회 {view}</span>
             </div>
           </div>
         </div>

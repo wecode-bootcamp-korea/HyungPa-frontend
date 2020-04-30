@@ -35,12 +35,12 @@ class Routes extends React.Component {
                 />
                 <Route
                   exact
-                  path="/ProductDetail/:productId"
+                  path="/Product/Detail/:productId"
                   component={ProductDetail}
                 />
                 <Route
                   exact
-                  path="/PostDetail/:postId"
+                  path="/Post/Detail/:postId"
                   component={ReviewDetail}
                 />
                 <Route exact path="/Post" component={Post} />

@@ -13,14 +13,16 @@ class ProductDetail extends Component {
       isLoading: false,
       label: [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5],
       data: {
-        product: {},
+        product_data: [{}],
         moreReviews: [],
       },
     };
   }
 
   async componentDidMount() {
-    const res = await fetch(ProductDetailData);
+    const res = await fetch(
+      `${ProductDetailData}${this.props.match.params.productId}`
+    );
     const json = await res.json();
     this.setState({
       isLoading: true,
@@ -30,7 +32,7 @@ class ProductDetail extends Component {
 
   avgStar = () => {
     if (this.state.isLoading) {
-      const { rateData } = this.state.data.product;
+      const { rateData } = this.state.data.product_data[0];
       const { label } = this.state;
       let result = 0;
       for (let num in label) {
@@ -46,13 +48,14 @@ class ProductDetail extends Component {
     const {
       brand,
       productName,
+      productImage,
       rateData,
       likes,
-      powereRview,
+      powerReview,
       miniReview,
       count,
       price,
-    } = this.state.data.product;
+    } = this.state.data.product_data[0];
     const { moreReviews } = this.state.data;
     return (
       <>
@@ -63,10 +66,12 @@ class ProductDetail extends Component {
               <ProductHead
                 brand={brand}
                 productName={productName}
+                productImage={productImage}
                 rate={[this.avgStar(), rateData.reduce((a, b) => a + b)]}
                 likes={likes}
-                pReview={powereRview.length}
-                mReview={miniReview.length}
+                powerReview={powerReview}
+                miniReview={miniReview}
+                price={price}
               />
             )}
           </div>
@@ -93,7 +98,7 @@ class ProductDetail extends Component {
             {isLoading && <Chart rateData={rateData} />}
           </div>
           <div className="priceInfo">
-            <div className="count">{count} ea</div>
+            <div className="count">{count}</div>
             <div className="price">
               <span>
                 정가 <i className="xi-chart-bar" />
@@ -106,11 +111,11 @@ class ProductDetail extends Component {
           </div>
           <div className="recommand">
             <span>추천 파워리뷰</span>
-            {isLoading
+            {/* {isLoading
               ? moreReviews.map((moreReview, index) => (
                   <MoreReview key={index} moreReview={moreReview} />
                 ))
-              : ""}
+              : ""} */}
           </div>
         </div>
       </>

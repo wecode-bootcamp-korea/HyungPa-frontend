@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { RankData } from "../../Config";
 import HeaderItem from "./HeaderItem/HeaderItem";
 import ItemRank from "./ItemRank/ItemRank";
@@ -40,7 +41,7 @@ class Rank extends Component {
           title: "언니의 신상픽",
         },
       ],
-      data: { rankData1: [], rankData2: [] },
+      data: { ProductData1: [], BrandData2: [], PickData3: [] },
     };
   }
   async componentDidMount() {
@@ -53,33 +54,43 @@ class Rank extends Component {
   }
   render() {
     const { isLoading, headerItems } = this.state;
-    const { rankData1, rankData2, slideItem } = this.state.data;
+    const { ProductData1, BrandData2, PickData3 } = this.state.data;
     return (
       <div className="Rank">
         <div className="headerItems">
+          {headerItems.map((headerItem, index) => (
+            <HeaderItem
+              key={headerItem.id}
+              headerItem={headerItem}
+              index={index}
+            />
+          ))}
+        </div>
+        <div className="itemRank">
+          <div className="title">
+            # 이달의 {isLoading ? ProductData1[0].category : ""} 랭킹
+          </div>
           {isLoading
-            ? headerItems.map((headerItem, index) => (
-                <HeaderItem
-                  key={headerItem.id}
-                  headerItem={headerItem}
-                  index={index}
-                />
+            ? ProductData1.map((rankData, index) => (
+                <Link key={rankData.id} to={`/Product/Detail/${rankData.id}`}>
+                  <ItemRank
+                    key={rankData.id}
+                    rankData={rankData}
+                    rankNum={index}
+                  />
+                </Link>
               ))
             : ""}
         </div>
         <div className="itemRank">
-          <div className="title"># 이달의 틴트 랭킹</div>
+          <div className="title">
+            # 이달의 {isLoading ? BrandData2[0].brand : ""} 랭킹
+          </div>
           {isLoading
-            ? rankData1.map((rankData, index) => (
-                <ItemRank key={index} rankData={rankData} rankNum={index} />
-              ))
-            : ""}
-        </div>
-        <div className="itemRank">
-          <div className="title"># 이달의 이니스프리 랭킹</div>
-          {isLoading
-            ? rankData2.map((rankData, index) => (
-                <ItemRank key={index} rankData={rankData} rankNum={index} />
+            ? BrandData2.map((rankData, index) => (
+                <Link key={rankData.id} to={`/Product/Detail/${rankData.id}`}>
+                  <ItemRank key={index} rankData={rankData} rankNum={index} />
+                </Link>
               ))
             : ""}
         </div>
@@ -87,7 +98,7 @@ class Rank extends Component {
           <div className="title">
             # 형님의 신상픽 <span>6</span>
           </div>
-          {isLoading && <SlideRank slideItem={slideItem} />}
+          {isLoading && <SlideRank slideItem={PickData3} />}
         </div>
       </div>
     );
