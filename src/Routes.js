@@ -7,6 +7,7 @@ import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 import Footer from "./Components/Footer/Footer";
 import "./Reset.scss";
 import Signunpa from "./Pages/Signunpa/Signunpa";
+import Signin from "./Pages/Signin/Signin";
 
 class Routes extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class Routes extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/Login" component={Login} />
+          <Route exact path="/Signin" component={Signin} />
           <Route exact path="/Signunpa" component={Signunpa} />
           <Route
             exact

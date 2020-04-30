@@ -31,6 +31,8 @@
     width: 182px;
     height: 30px;
     padding: 5px 10px;
+    font-size: 13px;
+    
     }
 
 .passwordipt{
@@ -47,9 +49,11 @@
         width: 200px;
         height: 40px;
         padding: 5px 10px;
+        font-size: 13px;
     }
 .emailbox{
     display: flex;
+    margin-top: 5px;
 }
 
 .icons{
@@ -62,12 +66,9 @@
     display:flex;
     justify-content:space-between;
     margin-top:20px;
+    border-top: 10px;
   
 
-}
-
-.handphoneinput{
-    display: flex;
 }
 
 .certification{
@@ -77,19 +78,25 @@
     border-radius: 50px;
     margin-top: 10px;
     margin-left: 90px;
-    padding-left: 10px;
+    font-size: 12px;
+    font-weight:500;
+    text-align: center;
 }
+
 .handphoneinput{
-    margin-top: 10px;
+    display: flex;
+    margin-top: 5px;
     border: 1px solid #e0e0e0;
     width: 100%;
     height: 40px;
-
+    margin-bottom: 20px;
+ 
 }
 
 .birthflex{
     display: flex;
     justify-content: space-between;
+    margin-top: 7px;
 }
 
 .Referrer{
@@ -97,15 +104,22 @@
     border: 1px solid #e0e0e0;
     width: 100%;
     height: 40px;
-
-    .Referrercheck{
-    border: 1px solid #e0e0e0;
-    width: 80px;
-    height: 20px;
-    border-radius: 50px;
     margin-top: 10px;
-    margin-left: 90px;
-    padding-left: 20px;
+
+    .Referrercheckitout{
+        border: 1px solid #e0e0e0;
+        width: 80px;
+        height: 20px;
+        border-radius: 50px;
+        margin-top: 10px;
+        margin-right: 10px;
+        font-size: 12px;
+        text-align: center;
+
+      input.value{
+          padding-left: 25px;
+      }  
+    
     }
     
 
@@ -113,10 +127,12 @@
 
 .Fullpromise{
     display:flex;
-}
-.Fullcheck{
-    width: 20px;
-    height: 20px;
+  .fullcheck{
+      margin-top: 3px;
+      font-size: 13px;
+      font-weight: 600px;
+
+  }  
 }
 
 .threelogin {
@@ -135,35 +151,43 @@
 
 .Acceptdiv{
     display: flex;
-    justify-content:start;
+    justify-content:space-around;
     
 }
 
 
 .underline1{
+    font-size: 13px;
     text-decoration: underline black;
-    padding-left:111px;
+    padding-left:163px;
 
 }
 
 .underline2{
+    font-size: 13px;
     text-decoration: underline black;
-    margin-left: 20px;
+    margin-left: 90px;
 }
 
 .underline3{
+    font-size: 13px;
     text-decoration: underline black;
-    margin-left: 53px;
+    margin-left: 117px;
 }
 
-.Subscription{
-    border: 1px solid black;
-    width: 288px;
-    height: 32px;
-    background-color: coral;
-    color: white;
+.Signup-subscription{
+    width: 100%;
     margin-top: 15px;
-    
+    padding: 10px;
+    // height: 32px;
+    background-color: #ff5527;
+    color: white;
+}
+
+.labeltext{
+    font-size: 14px;
+    font-weight:610;
+    font-style: bold;
 }
 
 .emaillist{
@@ -173,9 +197,13 @@
 
 }
 .selectinput{
-    margin-left: 10px;
+    margin-left: 20px;
     margin-top: 10px;
+    height: 20px;
     border-style: none;
+    font-size: 14px;
+    font-weight: 700;
+    opacity: 0.5;
 }
 
 .year{
@@ -195,27 +223,47 @@
     border-color:#eaeaea;
 }
 .birth{
-    margin-top: 20px;
+    // display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    .birthchoice{
+        // padding-bottom: 0px;
+        // margin-bottom: -1px;
+    }
 }
-.Referrerspan
-{
-    margin-top: 20px;
+.Referrerspan{
+    margin-top: 10px;
 }
 
-.Subscription{
-   width: 100%;
-}
+
 
 .checkbox{
     margin-top: 40px;
 }
 
-.fullcheck{
-    margin-left: 10px;
-}
-
 .Joinbutton{
-    padding-left: 137px;
-    padding-top: 5px;
+    width: 100%;
+    text-align: center;
 }
 
+
+.recommend{
+    width: 300px;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+.overseastext{
+    font-size: 14px;
+    font-weight: 700;
+    opacity: 0.5;
+}
+
+.phonenumber{
+    padding-left: 10px;
+}
+
+.necessary{
+    color: #ff7c59;
+}
