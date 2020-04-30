@@ -18,22 +18,10 @@ class PostFeed extends Component {
     }
     
     render() {
-        const { userPicture } = this.props;
-        const { userName } = this.props;
-        const { userSkin } = this.props;
-        const { feedTime } = this.props;
-        const { producImg } = this.props;
-        const { contentComment } = this.props;
-        const { producBrand } = this.props;
-        const { producName } = this.props;
-        const { likeImg } = this.props;
-        const { likeCount } = this.props;
-        const { commentImg } = this.props;
-        const { commentCount } = this.props;
-        const { shareImg } = this.props;
-        const { shareCount } = this.props;
-        const { viewCount } = this.props;
-
+        const { userPicture, userName, userSkin, feedTime, producImg, contentComment,
+            producBrand, producName, likeImg, likeCount, commentImg, commentCount, shareImg,
+            shareCount, viewCount } = this.props;
+        
         return (
             <div className='PostFeed'>
                 <div className='feedContent' 
