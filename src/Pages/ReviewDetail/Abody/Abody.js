@@ -24,7 +24,7 @@ class Abody extends Component {
               <span>숨기기</span>
             </div>
             <div className="date">
-              <span>{postDate}</span>
+              <span>{postDate ? postDate.slice(0, 10) : postDate}</span>
               <span>조회 {view}</span>
             </div>
           </div>

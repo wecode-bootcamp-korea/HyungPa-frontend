@@ -1,51 +1,58 @@
-import React, { Component } from 'react';
-import {Link} from "react-router-dom";
-import './ReviewList.scss';
-import ReviewFeed from './ReviewFeed/ReviewFeed';
-import AnotherRev from './AnotherRev/AnotherRev';
-import PlusMore from './PlusMore/PlusMore';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { ReviewMain } from "../../Config";
+import "./ReviewList.scss";
+import ReviewFeed from "./ReviewFeed/ReviewFeed";
+import AnotherRev from "./AnotherRev/AnotherRev";
+import PlusMore from "./PlusMore/PlusMore";
 
 class ReviewList extends Component {
   constructor() {
     super();
 
     this.state = {
-      userData: [],
+      isLoading: false,
+      times: 0,
+      limit: 9,
+      Data: [],
     };
   }
 
   componentDidMount = () => {
-    this.userData();
+    this.getData();
   };
 
-  userData = () => {
-    fetch("http://localhost:3000/userData/userData.json")
-      .then((response) => response.json())
-      .then((response) => {
-        this.setState({ userData: response.UserData });
-      });
-  };
+  async getData() {
+    const { times, limit } = this.state;
+    const res = await fetch(
+      `${ReviewMain}?limit=${limit}&offset=${times * limit + 1}`
+    );
+    const json = await res.json();
+    this.setState({
+      Data: [...this.state.Data, ...json.review_main],
+      times: times + 1,
+      isLoading: true,
+    });
+  }
+
   render() {
-    let UserList = this.state.userData.map((el) => {
+    let reviewList = this.state.Data.map((data) => {
+      const arg = /[a-z0-9]|[ \[\]{}()<>?|`~!@#$%^&*-_+=,.;:\"'\\]/g;
       return (
-        <Link key={el.id} to={`/Review/Detail/${el.id}`}>
+        <Link key={data.id} to={`/Review/Detail/${data.id}`}>
           <ReviewFeed
-            key={el.id}
-            userPicture={el.user.picture}
-            userName={el.user.name}
-            userSkin={el.user.skinType}
-            feedTime={el.user.feedTime}
-            producImg={el.product.image}
-            producBrand={el.product.brand}
-            producName={el.product.name}
-            contentComment={el.content.contentComment}
-            likeImg={el.feedInfo.likeImg}
-            likeCount={el.feedInfo.likeCount}
-            commentImg={el.feedInfo.commentImg}
-            commentCount={el.feedInfo.commentCount}
-            shareImg={el.feedInfo.shareImg}
-            shareCount={el.feedInfo.shareCount}
-            viewCount={el.viewCount.view}
+            key={data.id}
+            userPicture={""}
+            userName={""}
+            userSkin={""}
+            feedTime={""}
+            producImg={
+              "https://d33ur1yh5ph6b5.cloudfront.net/8e70abed-17bc-4893-b9b8-cd9709603c08-small"
+            }
+            producBrand={""}
+            producName={""}
+            contentComment={data.description.replace(arg, "")}
+            viewCount={data.view_number}
           />
         </Link>
       );
@@ -55,9 +62,11 @@ class ReviewList extends Component {
         <div className="anotherRevContain">
           <AnotherRev />
         </div>
-        <div className="reFeedContain">{UserList}</div>
+        <div className="reFeedContain">
+          {this.state.isLoading ? reviewList : ""}
+        </div>
         <div className="plusMore">
-          <PlusMore />
+          <PlusMore more={this.getData} />
         </div>
       </div>
     );

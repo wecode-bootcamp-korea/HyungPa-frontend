@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./Pages/Login/Login";
+import Signin from "./Pages/Signin/Signin";
 import Signunpa from "./Pages/Signunpa/Signunpa";
 import Nav from "./Components/Nav/Nav";
 import Home from "./Pages/Home/Home";
@@ -16,6 +17,7 @@ import "./Reset.scss";
 
 
 
+>>>>>>> master
 
 class Routes extends React.Component {
   render() {
@@ -35,7 +37,7 @@ class Routes extends React.Component {
                 <Route exact path="/Review" component={ReviewList} />
                 <Route
                   exact
-                  path="/Review/Detail/:reviewId"
+                  path="/Review/Detail/:id"
                   component={ReviewDetail}
                 />
                 <Route
@@ -43,11 +45,7 @@ class Routes extends React.Component {
                   path="/Product/Detail/:productId"
                   component={ProductDetail}
                 />
-                <Route
-                  exact
-                  path="/Post/Detail/:postId"
-                  component={ReviewDetail}
-                />
+                <Route exact path="/Post/Detail/:id" component={ReviewDetail} />
                 <Route exact path="/Post" component={Post} />
                 <Route exact path="/Rank" component={Rank} />
                 <Route exact path="/Rank/List" component={MoreRank} />

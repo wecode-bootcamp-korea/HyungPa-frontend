@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import { writeComment } from "../../../Config";
+import { WriteReviewComment, PostDetailCommentWrite } from "../../../Config";
 import CommentNoItem from "./CommentNoItem/CommentNoItem";
 import CommentList from "./CommentList/CommentList";
 import "./ReviewComment.scss";
@@ -14,15 +14,24 @@ class ReviewComment extends Component {
   }
   sumbitComment = (e) => {
     e.preventDefault();
-    fetch(`${writeComment}`, {
+    const { commentData } = this.state;
+    fetch(`${WriteReviewComment}`, {
       method: "POST",
-      body: JSON.stringify({}),
-    }).then(
-      this.setState({
-        commentData: "",
-      })
-    );
-    console.log(this.props.match.params);
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+      body: JSON.stringify({
+        comment: commentData,
+        review_id: "1",
+        user_id: "1",
+        is_original: "True",
+      }),
+    }).then((res) => {
+      this.setState({ commentData: "" });
+      res.status === 200
+        ? this.props.handleModal(false)
+        : this.props.handleModal(true);
+    });
   };
 
   render() {
