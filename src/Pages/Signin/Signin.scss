@@ -30,7 +30,7 @@
                         display: flex;
                         align-items: flex-end;
                         margin-bottom: 20px;
-                        .emailadresstext{
+                        .emaildwelling{
                             color:black;
                             font-size: 14px;
                             font-weight: 600;
@@ -71,7 +71,7 @@ input.underline {
      opacity: 0.8;
  }   
 
-.Logintext{
+.LoginWriting{
     border: 1px solid black;
     width: 320px;
     height: 38px;
@@ -101,18 +101,19 @@ input.underline {
 }
 
 .orline{
-    display: flex;
+    display: flex;;
     width: 264px;
     margin-left: 25px;
 
   .ortextdiv{
       margin-bottom: 1px;
-      padding-bottom: 3px;
-      text-align: center;
-    .ortext{
+      padding-bottom: 40px;
+      
+    .orWriting {
       font-size: 12px;
-      font-weight: 600;
+      font-weight:600;
       color: #959595;
+      text-align: center;
     }  
 
   }  
@@ -153,71 +154,72 @@ input.underline {
 }
 
 
-.kakaolog{
+.kakaoaccession{
+    display: flex;
+    border-radius:30px;
+    background-color: #fae100;
+    width: 90%;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 20px;
+
+
+
+    .kakaoaccessionimg{
+        width:20px;
+        height:20px;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+
+   .kakaoclickbox{
+    margin-top: 13px;
+    margin-left: 78px;
+
+    }
+    
+
+
+}
+
+.Faceaccession{
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius:30px;
-    background-color: #fae100;
-    width: 280px;
+    background-color: #000dff;
+    width: 90%;
     height: 40px;
-    margin: 20px 0px 0px 25px;
     font-size: 14px;
     font-weight: 800;
     
 
-    .kakaotextbox{
-        margin-right: 87px;
-    }
 
-
-    .kakaoimg{
-        width:17px;
-        height:17px;
-        margin-left: 20px;
-    } 
-
-}
-
-.Facebooklog{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius:30px;
-    background-color: #1976d2;
-    width: 280px;
-    height: 40px;
-    margin-top: 10px;
-    margin-left: 27px;
-    font-size: 14px;
-    font-weight: 800;
-
-
-    .Faceimg{
-        width:19px;
-        height:19px;
+    .Faceassionimg{
+        width:30px;
+        height:30px;
         margin-left: 15px;
         
     }
 
-    .Facetext{
+    .Faceassiontext{
         color: white;
-        margin-right: 65px;
+        margin-right: 90px;
 
     }
 
 }
 
-.Helpbox {
 
-    margin-top: 26px;
-    margin-right: 20px;
-
-    .Helptext {
-
+.needhelpbox{
+    margin-top:30px;
+    margin-left:110px;
+    
+    .needhelp{
         text-decoration: underline;
-        margin-left: 110px;
-
+        font-size: 14px;
+    
+    
     }
-
 }
