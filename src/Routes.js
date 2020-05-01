@@ -14,7 +14,6 @@ import Footer from "./Components/Footer/Footer";
 import ReviewList from "./Pages/ReviewList/ReviewList";
 import "./Reset.scss";
 
-
 class Routes extends React.Component {
   render() {
     return (
