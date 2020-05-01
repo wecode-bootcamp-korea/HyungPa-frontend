@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import {
+  MorePost,
   ReviewDetailData,
   PostDetailData,
   DetailUser,
@@ -25,6 +26,7 @@ class ReviewDetail extends Component {
       data: {
         body: { post: {} },
         user: { result: { image: "", name: "", skin: [] } },
+        moreReviewData: [],
         comment: [],
       },
     };
@@ -53,30 +55,40 @@ class ReviewDetail extends Component {
     // });
   }
 
+  componentWillReceiveProps() {
+    this.getPostData();
+    window.scrollTo(0, 0);
+  }
+  linkTo = (idx) => {
+    this.props.history.push(
+      `/post/detail/${this.state.data.moreReviewData[idx].id}`
+    );
+  };
+
   async getPostData() {
     const { id } = this.props.match.params;
     const bodyRes = await fetch(`${PostDetailData}${id}`);
     const userRes = await fetch(`${DetailUser}1`);
-    // const commentRes = await fetch(`${PostDetailComment}${id}`);
+    const moreReviews = await fetch(MorePost);
     const bodyJson = await bodyRes.json();
     const userJson = await userRes.json();
-    // const commentJson = await commentRes.json();
+    const moreReview = await moreReviews.json();
     this.setState({
       isLoading: true,
       trueIsReview: false,
       data: {
         body: bodyJson,
         user: userJson,
+        moreReviewData: moreReview.reviews,
         comment: [],
       },
     });
   }
 
   render() {
-    console.log(this.state.data);
     const { image, name, skin } = this.state.data.user.result;
     const { post } = this.state.data.body;
-    const { comment } = this.state.data;
+    const { comment, moreReviewData } = this.state.data;
     const { isLoading, trueIsReview, modalOn, product } = this.state;
     return (
       <>
@@ -108,17 +120,23 @@ class ReviewDetail extends Component {
               <span>{name}</span>
               {trueIsReview ? "님의 다른 파워리뷰" : "님의 뷰티 팁"}
             </div>
-            {/* {isLoading && moreReviews.length === 0 ? (
+            {isLoading && moreReviewData.length === 0 ? (
               <div className="noOtherReview">다른 파워리뷰가 없습니다!</div>
             ) : (
-              moreReviews.map((moreReview, index) => (
-                <MoreReview
-                  key={index}
-                  moreReview={moreReview}
-                  trueIsReview={trueIsReview}
-                />
+              moreReviewData.map((moreReview, idx) => (
+                <div
+                  onClick={() => {
+                    this.linkTo(idx);
+                  }}
+                >
+                  <MoreReview
+                    key={moreReview.id}
+                    moreReview={moreReview}
+                    trueIsReview={trueIsReview}
+                  />
+                </div>
               ))
-            )} */}
+            )}
           </article>
           <div className="rightProfile">
             <div className="profileWrap">

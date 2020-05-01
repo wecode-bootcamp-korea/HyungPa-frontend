@@ -26,13 +26,10 @@ class PostFeed extends Component {
       contentComment,
       producBrand,
       producName,
-      likeImg,
       likeCount,
-      commentImg,
       commentCount,
-      shareImg,
-      shareCount,
       viewCount,
+      text,
     } = this.props;
 
     const { isMouseOver } = this.state;
@@ -67,12 +64,12 @@ class PostFeed extends Component {
                   : "contentComment"
               }
             >
-              {contentComment}
+              {text}
             </div>
           </div>
           <div className="productContain">
             <div className="producInfo">
-              <div className="producText">{producBrand.slice(0, 24)}</div>
+              <div className="producText">{`${text.slice(0, 20)}...`}</div>
               <div className="producTextTwo">{producName}</div>
             </div>
           </div>
@@ -80,17 +77,12 @@ class PostFeed extends Component {
         <div className="feedInfo">
           <div className="iconBox">
             <div className="likeImgBox">
-              <img className="likeImg" src={likeImg} alt="img" />
               <div className="likeCount">{likeCount}</div>
             </div>
             <div className="commentImgBox">
-              <img className="commentImg" src={commentImg} alt="img" />
-              <div className="commentCount">{commentCount}</div>
+              <div className="commentCount">{commentCount}views</div>
             </div>
-            <div className="shareImgBox">
-              <img className="shareImg" src={shareImg} alt="img" />
-              <div className="shareCount">{shareCount}</div>
-            </div>
+            <div className="shareImgBox"></div>
           </div>
           <div className="viewCount">{viewCount}</div>
         </div>
