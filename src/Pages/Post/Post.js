@@ -27,7 +27,6 @@ class Post extends Component {
 
     render() {
         let EditorList = this.state.editorData.map((ed) => {
-            console.log(ed);
             return <PostFeed
             userPicture={ed.user.picture} 
             userName={ed.user.name}

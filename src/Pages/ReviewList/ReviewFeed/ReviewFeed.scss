@@ -3,7 +3,7 @@
   height: 400px;
   margin: 15px 0px;
   background-color: #fff;
-  cursor: pointer;
+  
 
   .feedContent {
     cursor: pointer;
@@ -158,7 +158,7 @@
         }
 
         .likeCount {
-          margin-top: 5px;
+          margin: 5px 0px 0px 2px;
           font-size: 12px;
           opacity: 0.5;
         }
@@ -174,7 +174,7 @@
         }
 
         .commentCount {
-          margin-top: 5px;
+          margin: 5px 0px 0px 2px;
           font-size: 12px;
           opacity: 0.5;
         }
@@ -189,7 +189,7 @@
         }
 
         .shareCount {
-          margin-top: 5px;
+          margin: 5px 0px 0px 2px;
           font-size: 12px;
           opacity: 0.5;
         }

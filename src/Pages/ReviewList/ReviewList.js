@@ -11,20 +11,37 @@ class ReviewList extends Component {
 
     this.state = {
       userData: [],
+      newData: [],
+      isBtnClick: false
     };
+  }
+
+  isBtnClick = () => {
+    this.setState({
+      isBtnClick: this.state.isBtnClick
+    })
   }
 
   componentDidMount = () => {
     this.userData();
+    this.newData();
   };
 
   userData = () => {
-    fetch("http://localhost:3000/userData/userData.json")
+    fetch("http://10.58.0.129:8000/reviewdetail/main/1")
       .then((response) => response.json())
       .then((response) => {
         this.setState({ userData: response.UserData });
       });
   };
+
+  newData = () => {
+    fetch("")
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({userData: this.state.newData.concat()})
+      })
+  }
   render() {
     let UserList = this.state.userData.map((el) => {
       return (
@@ -57,7 +74,7 @@ class ReviewList extends Component {
         </div>
         <div className="reFeedContain">{UserList}</div>
         <div className="plusMore">
-          <PlusMore />
+          <PlusMore onClick={this.newData} />
         </div>
       </div>
     );
