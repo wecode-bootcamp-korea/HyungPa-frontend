@@ -4,11 +4,22 @@ import "./ProductHead.scss";
 
 class ProductHead extends Component {
   render() {
-    const { brand, productName, rate, likes, pReview, mReview } = this.props;
+    const {
+      brand,
+      productName,
+      productImage,
+      rate,
+      likes,
+      powerReview,
+      miniReview,
+    } = this.props;
     return (
       <>
         <div className="ProductHead">
-          <div className="mainImage" />
+          <div
+            className="mainImage"
+            style={{ backgroundImage: `url("${productImage}")` }}
+          />
           <div className="brand">{brand}</div>
           <div className="productName">{productName}</div>
           <div className="rate">
@@ -24,8 +35,8 @@ class ProductHead extends Component {
           </div>
           <div className="icons">
             좋아요 <span>{likes}</span>
-            파워리뷰 <span>{pReview}</span>
-            미니리뷰 <span>{mReview}</span>
+            파워리뷰 <span>{powerReview}</span>
+            미니리뷰 <span>{miniReview}</span>
           </div>
         </div>
         <div className="btns">

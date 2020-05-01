@@ -4,9 +4,10 @@
   margin: 0px 7px;
   cursor: pointer;
   .image {
-    width: inherit;
+    width: 250px;
     height: 250px;
-    background-image: 100% 100%;
+    background-size: 100% 100%;
+    background-position: center;
     background-color: #aaaaaa;
   }
   .info {

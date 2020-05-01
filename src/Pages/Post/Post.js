@@ -1,29 +1,29 @@
-import React, { Component } from 'react';
-import PostFeed from './PostFeed/PostFeed';
-import PlusMore from '../ReviewList/PlusMore/PlusMore';
-import PostAllView from './PostAllView/PostAllView';
-import './Post.scss';
+import React, { Component } from "react";
+import PostFeed from "./PostFeed/PostFeed";
+import PlusMore from "../ReviewList/PlusMore/PlusMore";
+import PostAllView from "./PostAllView/PostAllView";
+import "./Post.scss";
 
 class Post extends Component {
-    constructor() {
-        super();
+  constructor() {
+    super();
 
-        this.state = {
-            editorData: []
-        };
-    }
-
-    componentDidMount = () => {
-        this.editorData();
+    this.state = {
+      editorData: [],
     };
+  }
 
-    editorData = () => {
-        fetch("http://localhost:3000/editorData/editorData.json")
-            .then((response) => response.json())
-            .then((response) => {
-                this.setState({editorData: response.EditorData})
-            })
-    }
+  componentDidMount = () => {
+    this.editorData();
+  };
+
+  editorData = () => {
+    fetch("http://localhost:3000/editorData/editorData.json")
+      .then((response) => response.json())
+      .then((response) => {
+        this.setState({ editorData: response.EditorData });
+      });
+  };
 
     render() {
         let EditorList = this.state.editorData.map((ed) => {

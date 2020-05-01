@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import SlideItem from "./SlideItem/SlideItem";
 import "./SlideRank.scss";
 
@@ -22,12 +23,15 @@ class SlideRank extends Component {
           <i className="xi-angle-left" />
         </div>
         <div className="items" ref={this.scroll}>
-          {slideItem.map((item, index) => (
-            <SlideItem
-              key={index}
-              brand={item.brand}
-              productName={item.productName}
-            />
+          {slideItem.map((item) => (
+            <Link key={item.id} to={`/Product/Detail/${item.id}`}>
+              <SlideItem
+                key={item.id}
+                brand={item.brand}
+                productImage={item.productImage}
+                productName={item.productName}
+              />
+            </Link>
           ))}
         </div>
         <div className="arrow">
