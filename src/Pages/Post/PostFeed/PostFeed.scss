@@ -158,31 +158,51 @@
       .likeImgBox {
         display: flex;
         align-items: center;
-
-        .likeImg {
-          height: 18px;
+  
+        .likeImgBox {
+          display: flex;
+          align-items: center;
+  
+          .likeImg {
+            height: 18px;
+          }
+  
+          .likeCount {
+            margin: 5px 0px 0px 2px;
+            font-size: 12px;
+            opacity: 0.5;
+          }
         }
-
-        .likeCount {
-          margin-top: 5px;
-          font-size: 12px;
-          opacity: 0.5;
+  
+        .commentImgBox {
+          display: flex;
+          align-items: center;
+          margin: 0 15px;
+  
+          .commentImg {
+            height: 18px;
+          }
+  
+          .commentCount {
+            margin: 5px 0px 0px 2px;
+            font-size: 12px;
+            opacity: 0.5;
+          }
         }
-      }
-
-      .commentImgBox {
-        display: flex;
-        align-items: center;
-        margin: 0 15px;
-
-        .commentImg {
-          height: 18px;
-        }
-
-        .commentCount {
-          margin-top: 5px;
-          font-size: 12px;
-          opacity: 0.5;
+  
+        .shareImgBox {
+          display: flex;
+          align-items: center;
+  
+          .shareImg {
+            height: 18px;
+          }
+  
+          .shareCount {
+            margin: 5px 0px 0px 2px;
+            font-size: 12px;
+            opacity: 0.5;
+          }
         }
       }
 

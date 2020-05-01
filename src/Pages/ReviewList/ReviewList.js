@@ -18,6 +18,12 @@ class ReviewList extends Component {
     };
   }
 
+  isBtnClick = () => {
+    this.setState({
+      isBtnClick: this.state.isBtnClick
+    })
+  }
+
   componentDidMount = () => {
     this.getData();
   };
