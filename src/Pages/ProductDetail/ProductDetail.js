@@ -56,7 +56,7 @@ class ProductDetail extends Component {
       count,
       price,
     } = this.state.data.product_data[0];
-    const { moreReviews } = this.state.data;
+    const { review_data } = this.state.data;
     return (
       <>
         <Nav />
@@ -111,11 +111,11 @@ class ProductDetail extends Component {
           </div>
           <div className="recommand">
             <span>추천 파워리뷰</span>
-            {/* {isLoading
-              ? moreReviews.map((moreReview, index) => (
-                  <MoreReview key={index} moreReview={moreReview} />
+            {isLoading
+              ? review_data.map((moreReview) => (
+                  <MoreReview key={moreReview.id} moreReview={moreReview} />
                 ))
-              : ""} */}
+              : ""}
           </div>
         </div>
       </>

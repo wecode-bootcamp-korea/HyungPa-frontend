@@ -73,8 +73,8 @@ class Home extends Component {
       .then(this.setState({ isLoading: true }));
   };
 
-  modalHandler = () => {
-    this.setState({ modalOn: !this.state.modalOn });
+  modalHandler = (isOn) => {
+    this.setState({ modalOn: isOn });
   };
 
   render() {

@@ -1,6 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { ReviewDetailData, PostDetailData } from "../../Config";
+import {
+  MorePost,
+  ReviewDetailData,
+  PostDetailData,
+  DetailUser,
+  PostDetailComment,
+} from "../../Config";
+import Modal from "../../Components/Modal/Modal";
 import Nav from "../../Components/Nav/Nav";
 import Aheader from "./Aheader/Aheader";
 import Abody from "./Abody/Abody";
@@ -13,44 +20,83 @@ class ReviewDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      modalOn: false,
       isLoading: false,
       trueIsReview: false,
       data: {
-        postUser: {},
-        product: {},
-        post: {
-          title: "",
-          description: "",
-          likeNum: "",
-          viewNum: "",
-        },
+        body: { post: {} },
+        user: { result: { image: "", name: "", skin: [] } },
+        moreReviewData: [],
         comment: [],
-        moreReviews: [],
       },
     };
   }
+  handleModal = (isOn) => {
+    window.scrollTo(0, 0);
+    this.setState({
+      modalOn: isOn,
+    });
+  };
 
   async componentDidMount() {
-    const selectData =
-      this.props.match.path === "/Review/Detail/:reviewId"
-        ? ReviewDetailData
-        : PostDetailData;
-    const isReview =
-      this.props.match.path === "/Review/Detail/:reviewId" ? true : false;
-    const res = await fetch(`${selectData}${this.props.match.params.postId}`);
-    const json = await res.json();
+    this.getPostData();
+    // const selectData =
+    //   this.props.match.path === "/Review/Detail/:id"
+    //     ? ReviewDetailData
+    //     : PostDetailData;
+    // const isReview =
+    //   this.props.match.path === "/Review/Detail/:id" ? true : false;
+    // const res = await fetch(`${selectData}${this.props.match.params.id}`);
+    // const json = await res.json();
+    // this.setState({
+    //   isLoading: true,
+    //   trueIsReview: isReview,
+    //   data: json,
+    // });
+  }
+
+  componentWillReceiveProps() {
+    this.getPostData();
+    window.scrollTo(0, 0);
+  }
+  linkTo = (idx) => {
+    this.props.history.push(
+      `/post/detail/${this.state.data.moreReviewData[idx].id}`
+    );
+  };
+
+  async getPostData() {
+    const { id } = this.props.match.params;
+    const bodyRes = await fetch(`${PostDetailData}${id}`);
+    const userRes = await fetch(`${DetailUser}1`);
+    const moreReviews = await fetch(MorePost);
+    const bodyJson = await bodyRes.json();
+    const userJson = await userRes.json();
+    const moreReview = await moreReviews.json();
     this.setState({
       isLoading: true,
-      trueIsReview: isReview,
-      data: json,
+      trueIsReview: false,
+      data: {
+        body: bodyJson,
+        user: userJson,
+        moreReviewData: moreReview.reviews,
+        comment: [],
+      },
     });
   }
 
   render() {
-    const { isLoading, trueIsReview } = this.state;
-    const { postUser, product, post, comment, moreReviews } = this.state.data;
+    const { image, name, skin } = this.state.data.user.result;
+    const { post } = this.state.data.body;
+    const { comment, moreReviewData } = this.state.data;
+    const { isLoading, trueIsReview, modalOn, product } = this.state;
     return (
       <>
+        {modalOn && (
+          <Modal modalHandler={this.handleModal}>
+            <span>로그인이 필요합니다.</span>
+          </Modal>
+        )}
         <div className="ReviewDetail">
           <article>
             <div className="articleWrap">
@@ -64,29 +110,39 @@ class ReviewDetail extends Component {
               <Abody post={post} />
             </div>
             {isLoading && (
-              // <ReviewComment postUser={postUser.name} comment={comment} />
-              <ReviewComment postUser={"postUser.name"} comment={[]} />
+              <ReviewComment
+                postUser={name}
+                comment={comment}
+                handleModal={this.handleModal}
+              />
             )}
-
             <div className="moreReviewText">
-              {/* <span>{postUser.name}</span> */}
+              <span>{name}</span>
               {trueIsReview ? "님의 다른 파워리뷰" : "님의 뷰티 팁"}
             </div>
-            {/* {isLoading && moreReviews.length === 0 ? (
+            {isLoading && moreReviewData.length === 0 ? (
               <div className="noOtherReview">다른 파워리뷰가 없습니다!</div>
             ) : (
-              moreReviews.map((moreReview, index) => (
-                <MoreReview
-                  key={index}
-                  moreReview={moreReview}
-                  trueIsReview={trueIsReview}
-                />
+              moreReviewData.map((moreReview, idx) => (
+                <div
+                  onClick={() => {
+                    this.linkTo(idx);
+                  }}
+                >
+                  <MoreReview
+                    key={moreReview.id}
+                    moreReview={moreReview}
+                    trueIsReview={trueIsReview}
+                  />
+                </div>
               ))
-            )} */}
+            )}
           </article>
           <div className="rightProfile">
             <div className="profileWrap">
-              {/* {isLoading && <RightProfile postUser={postUser} />} */}
+              {isLoading && (
+                <RightProfile postUser={this.state.data.user.result} />
+              )}
             </div>
           </div>
         </div>

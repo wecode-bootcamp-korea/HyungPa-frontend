@@ -42,11 +42,21 @@ class Signunpa extends React.Component {
               password: this.state.password
             })
           })
-            .then(response => response.json());
-        //     .then(response => {
-        
-        //  }}
+          .then(response => response.json())
+          .then(response => {
+              if(response.message==="SUCCESS"){
+                this.props.history.push("/Signin");
+              }
+
+              console.log(response)
+            // if (response.token) {
+            //   localStorage.setItem("token", response.token);
+            //   alert("로그인에 성공하셨습니다.");
+            //   this.props.history.push("/");
+            // }
+          });
         }
+            
     render() {
         return(
             <div className ="Unpabody">
