@@ -6,7 +6,10 @@ class MoreReview extends Component {
     const { moreReview, trueIsReview } = this.props;
     return (
       <div className="MoreReview">
-        <div className="moreReviewImg" />
+        <div
+          className="moreReviewImg"
+          style={{ backgroundImage: `url("${moreReview.image}")` }}
+        />
         <div className="moreInfo">
           <div className="info">
             {trueIsReview ? <span>파워리뷰</span> : <span>뷰티팁</span>}
@@ -19,11 +22,11 @@ class MoreReview extends Component {
           <div className="icons">
             <div className="icons">
               <i className="xi-heart" />
-              {moreReview.likeNum}
+              {moreReview.likes}
               <i className="xi-forum" />
-              {moreReview.commentNum}
+              0
               <i className="xi-eye-o" />
-              {moreReview.viewNum}
+              {moreReview.views}
             </div>
           </div>
         </div>

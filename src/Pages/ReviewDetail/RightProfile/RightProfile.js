@@ -8,7 +8,10 @@ class RightProfile extends Component {
     return (
       <>
         <div className="RightProfile">
-          <div className="image" />
+          <div
+            className="image"
+            style={{ backgroundImage: `url("${postUser.image}")` }}
+          />
           <div className="name">{postUser.name}</div>
           <div className="skinInfo">
             {postUser.skin.map((skin, index) => (

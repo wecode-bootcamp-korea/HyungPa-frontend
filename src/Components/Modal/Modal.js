@@ -6,11 +6,21 @@ class Modal extends Component {
     const { modalHandler, children } = this.props;
     return (
       <>
-        <div className="Modal" onClick={modalHandler} />
+        <div
+          className="Modal"
+          onClick={() => {
+            modalHandler(false);
+          }}
+        />
         <div className="ModalWrap">
           <div className="Modalcontainer">
             {children}
-            <div className="modalBtn" onClick={modalHandler}>
+            <div
+              className="modalBtn"
+              onClick={() => {
+                modalHandler(false);
+              }}
+            >
               <i className="xi-close" />
             </div>
           </div>

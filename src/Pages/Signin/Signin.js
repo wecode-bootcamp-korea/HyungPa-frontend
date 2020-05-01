@@ -2,36 +2,35 @@ import React from 'react';
 import './Signin.scss'
 
 
-
 class Signin extends React.Component {
-    
-    constructor(){
-        super();
+  constructor() {
+    super();
 
-        this.state = {
-            email: "",
-            password: ""
-        }
-    }
+    this.state = {
+      email: "",
+      password: "",
+    };
+  }
 
-    handleID = (event) => {
-        // console.log(event.target.value)
-        this.setState({
-            email: event.target.value
-        });
-    }
+  handleID = (event) => {
+    // console.log(event.target.value)
+    this.setState({
+      email: event.target.value,
+    });
+  };
 
-    handlePW=(event) =>{
-        console.log("pwvalue : ", event.target.value)
-        this.setState({
-            password: event.target.value
-        });
-    }
+  handlePW = (event) => {
+    console.log("pwvalue : ", event.target.value);
+    this.setState({
+      password: event.target.value,
+    });
+  };
 
    
   handleLogin = () => {
     // console.log("this.state", this.state);
     fetch("http://10.58.0.129:8000/reviewdetail/sign-in", {
+
       method: "POST",
       // headers: {
       //   "token": localStorage.setItem("wtw-token")
@@ -50,17 +49,6 @@ class Signin extends React.Component {
         }
       });
   };
-
-  render() {
-    return (
-      <div className="Login">
-        <div>Login</div>
-        <input placeholder="id" onChange={this.handleID} />
-        <input placeholder="pw" onChange={this.handlePW} />
-        <button onClick={this.handleLogin}>로그인</button>
-      </div>
-    );
-  }
 
 
     render() {
@@ -117,13 +105,9 @@ class Signin extends React.Component {
                                     </div> 
                               </div>
                           </div>
-                      </div>                    
-                </div>
-            </div>
+                      </div> 
+                      </div>    
+                      </div>                       
+);}}
 
-            )
-        }
-    
-    }
-
-    export default Signin;
+export default Signin;
