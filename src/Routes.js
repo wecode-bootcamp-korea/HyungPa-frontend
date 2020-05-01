@@ -12,12 +12,7 @@ import Rank from "./Pages/Rank/Rank";
 import MoreRank from "./Pages/Rank/MoreRank/MoreRank";
 import Footer from "./Components/Footer/Footer";
 import ReviewList from "./Pages/ReviewList/ReviewList";
-import Signin from "./Pages/Signin/Signin";
 import "./Reset.scss";
-
-
-
->>>>>>> master
 
 class Routes extends React.Component {
   render() {

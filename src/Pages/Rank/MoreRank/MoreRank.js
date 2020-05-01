@@ -44,7 +44,7 @@ class MoreRank extends Component {
   getRankData = () => {
     const { picked, category, limit, times, moreRankDate } = this.state;
     if (picked === 0) {
-      fetch(`${RankMoreData}all?limit=${limit}&offset=${limit * times + 1}`)
+      fetch(`${RankMoreData}?limit=${limit}&offset=${limit * times + 1}`)
         .then((res) => res.json())
         .then((res) =>
           this.setState({ moreRankDate: [...moreRankDate, ...res.products] })

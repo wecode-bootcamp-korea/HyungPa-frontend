@@ -56,7 +56,9 @@ class Nav extends Component {
             <div className="line" />
             <i className="xi-cart-o" />
             <i className="xi-pen-o" />
-            <i className="xi-bars" />
+            <Link to={"/signin"}>
+              <i className="xi-bars" />
+            </Link>
           </div>
         </div>
       </div>

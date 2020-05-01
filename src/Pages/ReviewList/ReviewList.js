@@ -45,13 +45,13 @@ class ReviewList extends Component {
             userPicture={""}
             userName={""}
             userSkin={""}
-            feedTime={""}
-            producImg={
-              "https://d33ur1yh5ph6b5.cloudfront.net/8e70abed-17bc-4893-b9b8-cd9709603c08-small"
-            }
-            producBrand={""}
-            producName={""}
-            contentComment={data.description.replace(arg, "")}
+            feedTime={data.postdate.slice(0, 10)}
+            producImg={data.product_img}
+            producBrand={data.brand}
+            producName={data.product}
+            contentComment={`${data.description
+              .replace(arg, "")
+              .slice(0, 50)}...`}
             viewCount={data.view_number}
           />
         </Link>
@@ -66,7 +66,11 @@ class ReviewList extends Component {
           {this.state.isLoading ? reviewList : ""}
         </div>
         <div className="plusMore">
-          <PlusMore more={this.getData} />
+          <PlusMore
+            more={() => {
+              this.getData();
+            }}
+          />
         </div>
       </div>
     );
