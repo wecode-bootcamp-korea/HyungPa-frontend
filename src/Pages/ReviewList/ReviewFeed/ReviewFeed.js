@@ -45,11 +45,8 @@ class ReviewFeed extends Component {
         >
           <div className="userContain">
             <div className="userInfoBox">
-              <div className="userImgBox">
-                <img className="userImg" src={userPicture} alt="img" />
-              </div>
+              <div className="userImgBox"></div>
               <div className="userInfo">
-                <div className="userName">{userName}</div>
                 <div className="skinType">
                   <span className="userSkin">{userSkin}</span>
                 </div>

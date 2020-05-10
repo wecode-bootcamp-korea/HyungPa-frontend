@@ -52,6 +52,7 @@ class Post extends Component {
             text={data.first_text}
             producName={""}
             likeImg={""}
+            title={data.title}
             likeCount={""}
             commentImg={""}
             commentCount={""}

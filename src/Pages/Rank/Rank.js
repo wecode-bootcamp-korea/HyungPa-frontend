@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { RankData } from "../../Config";
+import { RankDataProduct, RankDataBrand, RankDataPick } from "../../Config";
 import HeaderItem from "./HeaderItem/HeaderItem";
 import ItemRank from "./ItemRank/ItemRank";
 import SlideRank from "./SlideRank/SlideRank";
@@ -44,14 +44,30 @@ class Rank extends Component {
       data: { ProductData1: [], BrandData2: [], PickData3: [] },
     };
   }
+
   async componentDidMount() {
-    const res = await fetch(RankData);
-    const json = await res.json();
+    const [resProduct, resBrand, resPick] = await Promise.all([
+      fetch(RankDataProduct),
+      fetch(RankDataBrand),
+      fetch(RankDataPick),
+    ]);
+
+    const [jsonProduct, jsonBrand, jsonPick] = await Promise.all([
+      resProduct.json(),
+      resBrand.json(),
+      resPick.json(),
+    ]);
+
     this.setState({
       isLoading: true,
-      data: json,
+      data: {
+        ProductData1: jsonProduct.ProductData1,
+        BrandData2: jsonBrand.BrandData2,
+        PickData3: jsonPick.PickData3,
+      },
     });
   }
+
   render() {
     const { isLoading, headerItems } = this.state;
     const { ProductData1, BrandData2, PickData3 } = this.state.data;

@@ -25,9 +25,9 @@ class HomeReview extends Component {
           {reviewData.map((data) => (
             <ReviewCard
               key={data.id}
-              img={data.img}
-              title={data.title}
-              brand={data.brand}
+              img={data.first_image}
+              title={data.first_comment.slice(0, 20)}
+              likes={data.likes}
             />
           ))}
         </div>

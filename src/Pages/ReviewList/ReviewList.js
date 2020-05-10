@@ -20,9 +20,9 @@ class ReviewList extends Component {
 
   isBtnClick = () => {
     this.setState({
-      isBtnClick: this.state.isBtnClick
-    })
-  }
+      isBtnClick: this.state.isBtnClick,
+    });
+  };
 
   componentDidMount = () => {
     this.getData();
@@ -43,7 +43,6 @@ class ReviewList extends Component {
 
   render() {
     let reviewList = this.state.Data.map((data) => {
-      const arg = /[a-z0-9]|[ \[\]{}()<>?|`~!@#$%^&*-_+=,.;:\"'\\]/g;
       return (
         <Link key={data.id} to={`/Review/Detail/${data.id}`}>
           <ReviewFeed
@@ -51,13 +50,11 @@ class ReviewList extends Component {
             userPicture={""}
             userName={""}
             userSkin={""}
-            feedTime={data.postdate.slice(0, 10)}
-            producImg={data.product_img}
+            feedTime={data.published_at.slice(0, 10)}
+            producImg={data.first_image}
             producBrand={data.brand}
-            producName={data.product}
-            contentComment={`${data.description
-              .replace(arg, "")
-              .slice(0, 50)}...`}
+            producName={`${data.first_comment.slice(0, 20)}...`}
+            contentComment={`${data.first_comment.slice(0, 100)}...`}
             viewCount={data.view_number}
           />
         </Link>
