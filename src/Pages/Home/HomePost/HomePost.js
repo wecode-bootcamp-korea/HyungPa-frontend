@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./HomePost.scss";
 
 class HomePost extends Component {
@@ -11,14 +12,16 @@ class HomePost extends Component {
         </div>
         <div className="container">
           {postData.map((post) => (
-            <div key={post.id} className="HomePostCard">
-              <div
-                className="image"
-                style={{ backgroundImage: `url("${post.img}")` }}
-              />
-              <div className="title">{post.title}</div>
-              <div className="category">{post.brand}</div>
-            </div>
+            <Link to={`/post/detail/${post.id}`} key={post.id}>
+              <div key={post.id} className="HomePostCard">
+                <div
+                  className="image"
+                  style={{ backgroundImage: `url("${post.first_image}")` }}
+                />
+                <div className="title">{post.title}</div>
+                <div className="category">{post.brand}</div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

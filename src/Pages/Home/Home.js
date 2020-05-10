@@ -1,5 +1,6 @@
 import React, { Component, createRef } from "react";
-import { HomeData, Events } from "../../Config";
+import { HomeData } from "../../Config";
+import { Link } from "react-router-dom";
 import Modal from "../../Components/Modal/Modal";
 import SlideEvent from "./SlideEvnet/SlideEvent";
 import QNA from "./QNA/QNA";
@@ -17,6 +18,14 @@ class Home extends Component {
       modalOn: false,
       eventLoading: false,
       isLoading: false,
+      events: [
+        "https://d33ur1yh5ph6b5.cloudfront.net/abe33a8a-d9dc-4a53-ad1e-715500b9fe4e-mid",
+        "https://d33ur1yh5ph6b5.cloudfront.net/61e91d4d-7fc6-4481-8fd4-456aa3696967-mid",
+        "https://d33ur1yh5ph6b5.cloudfront.net/54a55749-2a26-4537-9d9d-78f376cafa59-mid",
+        "https://d33ur1yh5ph6b5.cloudfront.net/640f1bc3-3779-4e61-a3fa-67d1fea51667-mid",
+        "https://d33ur1yh5ph6b5.cloudfront.net/fcf12371-438b-435b-aa36-f888c85ed420-mid",
+        "https://d33ur1yh5ph6b5.cloudfront.net/684d8d8b-ed1e-4d1f-b67a-8a2aae4c4072-mid",
+      ],
       bottomBanner: [
         {
           img: [
@@ -47,24 +56,15 @@ class Home extends Component {
           title: "형님의 신상픽",
         },
       ],
-      events: [],
       data: {
-        reviewData: [],
-        rankData: [],
-        bottomBanner: [],
+        ProductData1: [],
+        PostData3: [],
+        Review_data2: [],
       },
     };
   }
 
   componentDidMount = () => {
-    fetch(Events)
-      .then((res) => res.json())
-      .then((res) =>
-        this.setState({
-          eventLoading: true,
-          events: res.Events,
-        })
-      );
     fetch(HomeData)
       .then((res) => res.json())
       .then((res) => {
@@ -78,7 +78,7 @@ class Home extends Component {
   };
 
   render() {
-    const { reviewData, rankData } = this.state.data;
+    const { ProductData1, PostData3, Review_data2 } = this.state.data;
     const { modalOn, isLoading, events, bottomBanner } = this.state;
 
     return (
@@ -114,15 +114,17 @@ class Home extends Component {
             <div className="Rightwrap">20.04.21</div>
           </div>
           <QNA />
-          {isLoading && <HomeReview reviewData={reviewData} />}
+          {isLoading && <HomeReview reviewData={Review_data2} />}
           <div className="banner" />
-          {isLoading && <HomePost postData={reviewData} />}
+          {isLoading && <HomePost postData={PostData3} />}
           <div className="banner2" />
           <div className="itemRank">
             <div className="title"># 이달의 틴트 랭킹</div>
             {isLoading
-              ? rankData.map((rankData, index) => (
-                  <ItemRank key={index} rankData={rankData} rankNum={index} />
+              ? ProductData1.map((rankData, index) => (
+                  <Link to={`/Product/Detail/${rankData.id}`}>
+                    <ItemRank key={index} rankData={rankData} rankNum={index} />
+                  </Link>
                 ))
               : ""}
           </div>

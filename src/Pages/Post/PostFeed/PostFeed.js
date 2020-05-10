@@ -23,8 +23,7 @@ class PostFeed extends Component {
       userSkin,
       feedTime,
       producImg,
-      contentComment,
-      producBrand,
+      title,
       producName,
       likeCount,
       commentCount,
@@ -69,7 +68,7 @@ class PostFeed extends Component {
           </div>
           <div className="productContain">
             <div className="producInfo">
-              <div className="producText">{`${text.slice(0, 20)}...`}</div>
+              <div className="producText">{`${title}`}</div>
               <div className="producTextTwo">{producName}</div>
             </div>
           </div>

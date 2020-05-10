@@ -13,6 +13,9 @@ class ReviewComment extends Component {
     };
   }
   sumbitComment = (e) => {
+    const id =
+      this.props.match.path === "/Post/Detail/:id" ? "post_id" : "review_id";
+
     e.preventDefault();
     const { commentData } = this.state;
     fetch(`${WriteReviewComment}`, {
@@ -22,7 +25,7 @@ class ReviewComment extends Component {
       },
       body: JSON.stringify({
         comment: commentData,
-        review_id: "1",
+        [id]: this.props.match.params.id,
         user_id: "1",
         is_original: "True",
       }),

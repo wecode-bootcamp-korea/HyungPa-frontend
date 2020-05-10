@@ -1,4 +1,5 @@
 import React from "react";
+import { Login } from "../../Config";
 import "./Signin.scss";
 
 class Signin extends React.Component {
@@ -27,7 +28,7 @@ class Signin extends React.Component {
 
   handleLogin = () => {
     // console.log("this.state", this.state);
-    fetch("http://10.58.0.129:8000/reviewdetail/sign-in", {
+    fetch(`${Login}`, {
       method: "POST",
       // headers: {
       //   "token": localStorage.setItem("wtw-token")
@@ -103,12 +104,13 @@ class Signin extends React.Component {
                   <div className="ortextdiv">
                     <span className="orWriting">또는</span>
                   </div>
-                  <div className="linediv2"></div>
+                  <div className="linediv"></div>
                 </div>
                 <div className="kakaoaccession">
                   <img
                     className="kakaoaccessionimg"
                     src="https://image.flaticon.com/icons/svg/2111/2111426.svg"
+                    alt="kakao"
                   />
                   <div className="kakaoclickbox">
                     <span className="kakaoclick">카카오로 로그인</span>
@@ -118,6 +120,7 @@ class Signin extends React.Component {
                   <img
                     className="Faceassionimg"
                     src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png"
+                    alt="facebook"
                   />
                   <span className="Faceassiontext">페이스북으로 로그인</span>
                 </div>

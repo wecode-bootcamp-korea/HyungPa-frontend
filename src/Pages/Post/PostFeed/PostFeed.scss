@@ -125,7 +125,7 @@
 
       .producText {
         padding: 12px 0px;
-        font-size: 18px;
+        font-size: 12px;
         font-weight: 500;
         line-height: 30px;
         white-space: nowrap;
@@ -158,46 +158,46 @@
       .likeImgBox {
         display: flex;
         align-items: center;
-  
+
         .likeImgBox {
           display: flex;
           align-items: center;
-  
+
           .likeImg {
             height: 18px;
           }
-  
+
           .likeCount {
             margin: 5px 0px 0px 2px;
             font-size: 12px;
             opacity: 0.5;
           }
         }
-  
+
         .commentImgBox {
           display: flex;
           align-items: center;
           margin: 0 15px;
-  
+
           .commentImg {
             height: 18px;
           }
-  
+
           .commentCount {
             margin: 5px 0px 0px 2px;
             font-size: 12px;
             opacity: 0.5;
           }
         }
-  
+
         .shareImgBox {
           display: flex;
           align-items: center;
-  
+
           .shareImg {
             height: 18px;
           }
-  
+
           .shareCount {
             margin: 5px 0px 0px 2px;
             font-size: 12px;

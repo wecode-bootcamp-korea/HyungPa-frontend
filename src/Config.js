@@ -1,24 +1,27 @@
-const API = "http://localhost:3000";
+export const API = "http://18.217.6.73:8000";
 
-export const Events = `${API}/Data/EventData.json`;
+export const HomeData = `${API}/user/home`;
 
-export const HomeData = `${API}/Data/HomeData.json`;
+export const RankDataProduct = `${API}/product/productrank`;
+export const RankDataBrand = `${API}/product/brandrank`;
+export const RankDataPick = `${API}/product/newpick`;
+export const RankMoreData = `${API}/product`;
 
-export const RankData = `http://10.58.4.116:8000/rank`;
+export const ProductDetailData = `${API}/product/detail/`;
 
-export const RankMoreData = `http://10.58.4.116:8000/product`;
+export const ReviewDetailData = `${API}/review/description/`;
+export const ReviewMain = `${API}/review/reviewmain`;
+export const ReivewComment = `${API}/review/reviewcomment`;
+export const MoreReviewProduct = `${API}/product/`;
 
-export const ProductDetailData = `http://10.58.4.116:8000/productdetail/`;
+export const DetailUser = `${API}/user/`;
 
-export const ReviewDetailData = `http://10.58.0.129:8000/reviewdetail/description/`;
-export const ReviewMain = `http://10.58.0.129:8000/reviewdetail/main`;
+export const PostMain = `${API}/post/postmain`;
+export const PostDetailData = `${API}/post/description/`;
+export const PostDetailComment = `${API}/post/getcomment/`;
+export const PostDetailCommentWrite = `${API}/post/comment/`;
+export const MorePost = `${API}/post/review`;
 
-export const DetailUser = `http://10.58.1.6:8000/user/`;
+export const WriteReviewComment = `${API}/reviewdetail/comment`;
 
-export const PostMain = `http://10.58.1.6:8000/post/postmain`;
-export const PostDetailData = `http://10.58.1.6:8000/post/description/`;
-export const PostDetailComment = `http://10.58.1.6:8000/post/getcomment/`;
-export const PostDetailCommentWrite = `http://10.58.1.6:8000/post/comment/`;
-export const MorePost = `http://10.58.1.6:8000/post/review`;
-
-export const WriteReviewComment = `http://10.58.0.129:8000/reviewdetail/comment`;
+export const Login = `${API}/user/sign-in`;

@@ -5,10 +5,9 @@ import {
   ReviewDetailData,
   PostDetailData,
   DetailUser,
-  PostDetailComment,
+  MoreReviewProduct,
 } from "../../Config";
 import Modal from "../../Components/Modal/Modal";
-import Nav from "../../Components/Nav/Nav";
 import Aheader from "./Aheader/Aheader";
 import Abody from "./Abody/Abody";
 import ReviewComment from "./ReviewComment/ReviewComment";
@@ -40,30 +39,48 @@ class ReviewDetail extends Component {
 
   async componentDidMount() {
     this.getPostData();
-    // const selectData =
-    //   this.props.match.path === "/Review/Detail/:id"
-    //     ? ReviewDetailData
-    //     : PostDetailData;
-    // const isReview =
-    //   this.props.match.path === "/Review/Detail/:id" ? true : false;
-    // const res = await fetch(`${selectData}${this.props.match.params.id}`);
-    // const json = await res.json();
-    // this.setState({
-    //   isLoading: true,
-    //   trueIsReview: isReview,
-    //   data: json,
-    // });
+    // if (this.props.match.path === "/Review/Detail/:id") {
+    //   this.getReivewData();
+    // } else {
+    // }
   }
 
-  componentWillReceiveProps() {
-    this.getPostData();
-    window.scrollTo(0, 0);
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      this.getPostData();
+      window.scrollTo(0, 0);
+    }
   }
+
   linkTo = (idx) => {
     this.props.history.push(
       `/post/detail/${this.state.data.moreReviewData[idx].id}`
     );
   };
+
+  // async getReivewData() {
+  //   const { id } = this.props.match.params;
+  //   const userRes = await fetch(`${DetailUser}1`);
+  //   const userJson = await userRes.json();
+  //   const [resDescription, resMoreProduct] = await Promise.all([
+  //     fetch(`${ReviewDetailData}${id}`),
+  //     fetch(`${MoreReviewProduct}${id}`),
+  //   ]);
+  //   const [jsonDescription, jsonMoreProduct] = await Promise.all([
+  //     resDescription.json(),
+  //     resMoreProduct.json(),
+  //   ]);
+  //   this.setState({
+  //     isLoading: true,
+  //     trueIsReview: false,
+  //     data: {
+  //       body: jsonDescription,
+  //       user: userJson,
+  //       moreReviewData: jsonMoreProduct,
+  //       comment: [],
+  //     },
+  //   });
+  // }
 
   async getPostData() {
     const { id } = this.props.match.params;
