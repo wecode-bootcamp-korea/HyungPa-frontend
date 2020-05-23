@@ -60,12 +60,4 @@
 
 ## Video
 
-<Error>
-<Code>AccessDenied</Code>
-<Message>Access Denied</Message>
-<RequestId>99EA233DE36E327B</RequestId>
-<HostId>
-0pVBs2P+wfxKYgtpZsHTk24twi9LoP655qAIRRJKFzzdOh+jxTSajjC42xf8VUSSHl+SOpPTgh8=
-</HostId>
-</Error>
-
+[![URL](https://user-images.githubusercontent.com/60928021/82725804-8ab43d80-9d1a-11ea-8449-eb7de37073b2.png)](https://youtu.be/lJ7GSCtig0w)
