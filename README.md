@@ -58,6 +58,14 @@
 - 제품 디테일 해당 별점 분포도를 그래프로 구현(라이브러리 사용).
 
 
-##Video
+## Video
 
+<Error>
+<Code>AccessDenied</Code>
+<Message>Access Denied</Message>
+<RequestId>99EA233DE36E327B</RequestId>
+<HostId>
+0pVBs2P+wfxKYgtpZsHTk24twi9LoP655qAIRRJKFzzdOh+jxTSajjC42xf8VUSSHl+SOpPTgh8=
+</HostId>
+</Error>
 
