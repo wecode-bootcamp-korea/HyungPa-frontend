@@ -4,7 +4,7 @@
 ## 개발 인원 및 기간
 - 기간: 2주(4월 20일 ~ 5월 1일)
 - 인원: 프론트 3명(최준영, 주상하, 박재현), 백엔드 3명(김수형, 양봉현, 차지환)
-- 백엔드 github: 
+- 백엔드 github: https://github.com/wecode-bootcamp-korea/HyungPa-backend
 
 ## 프로젝트 주요 목적
 - 실제 협업시 사용하는 Scrum, Sprint Meeting, Stend Up Meeting 방식 경험.
