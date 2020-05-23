@@ -1,3 +1,4 @@
+<img width="1105" alt="스크린샷 2020-05-03 오후 11 06 40" src="https://user-images.githubusercontent.com/48509329/82733581-af76d800-9d4f-11ea-9531-86da4aabffad.png">
 
 
 # 언니의 파우치 클론 프로젝트 소개__FrontEnd.
