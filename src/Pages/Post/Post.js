@@ -42,9 +42,7 @@ class Post extends Component {
         <Link key={data.id} to={`/post/detail/${data.id}`}>
           <PostFeed
             key={data.id}
-            userPicture={
-              "https://d33ur1yh5ph6b5.cloudfront.net/dd9b208b-714d-4d53-8203-17e1a3b88b2d-thumbnail"
-            }
+            userPicture={"https://test.com"}
             userName={"언파에디터"}
             userSkin={"건성, 21호"}
             feedTime={data.published_at.slice(0, 10)}
